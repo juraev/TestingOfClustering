@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/user/CLionProjects/TestingOfClustering/algo/sampling.h
+stdexcept
+-
+functional
+-
+random
+-
+
+/Users/user/CLionProjects/TestingOfClustering/main.cpp
+iostream
+-
+algo/sampling.h
+/Users/user/CLionProjects/TestingOfClustering/algo/sampling.h
+

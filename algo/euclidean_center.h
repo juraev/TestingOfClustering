@@ -52,8 +52,7 @@ namespace hidden{
         int N = points.size();
 
         for (int i = 0; i < N; ++i) {
-            Cgal_Point p(D, points[i].cartesian_begin(), points[i].cartesian_end());
-            S.push_back(Sphere1D(p, FT(0)));
+            S.emplace_back(points[i], FT(0));
         }
 
         Min_sphere1D ms(S.begin(), S.end());       // check in the spheres
@@ -73,8 +72,7 @@ namespace hidden{
         int N = points.size();
 
         for (int i = 0; i < N; ++i) {
-            Cgal_Point p(D, points[i].cartesian_begin(), points[i].cartesian_end());
-            S.push_back(Sphere2D(p, FT(0)));
+            S.emplace_back(points[i], FT(0));
         }
 
         Min_sphere2D ms(S.begin(), S.end());       // check in the spheres
@@ -94,8 +92,7 @@ namespace hidden{
         int N = points.size();
 
         for (int i = 0; i < N; ++i) {
-            Cgal_Point p(D, points[i].cartesian_begin(), points[i].cartesian_end());
-            S.push_back(Sphere3D(p, FT(0)));
+            S.emplace_back(points[i], FT(0));
         }
 
         Min_sphere3D ms(S.begin(), S.end());       // check in the spheres
@@ -115,8 +112,7 @@ namespace hidden{
         int N = points.size();
 
         for (int i = 0; i < N; ++i) {
-            Cgal_Point p(D, points[i].cartesian_begin(), points[i].cartesian_end());
-            S.push_back(Sphere4D(p, FT(0)));
+            S.emplace_back(points[i], FT(0));
         }
 
         Min_sphere4D ms(S.begin(), S.end());       // check in the spheres
@@ -136,8 +132,7 @@ namespace hidden{
         int N = points.size();
 
         for (int i = 0; i < N; ++i) {
-            Cgal_Point p(D, points[i].cartesian_begin(), points[i].cartesian_end());
-            S.push_back(Sphere5D(p, FT(0)));
+            S.emplace_back(points[i], FT(0));
         }
 
         Min_sphere5D ms(S.begin(), S.end());       // check in the spheres
@@ -170,7 +165,7 @@ double radius(const std::vector<Cgal_Point>& points, const int D){
             return hidden::radiusnD<5>(points);
 
         default:
-            std::runtime_error("Euclidean 1 center : Not impemented for D < 1 or D > 5.");
+            throw std::runtime_error("Euclidean 1 center : Not impemented for D < 1 or D > 5.");
     }
     return 0.0;
 }

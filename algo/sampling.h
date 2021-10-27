@@ -144,8 +144,6 @@ namespace clustering {
 
         double rad = radius(sample, d);
 
-        std::cout << rad << " " << m << std::endl;
-
         return rad <= _b;
     }
 
@@ -190,8 +188,6 @@ namespace clustering {
     bool SamplingAlgorithm<Cost::DIAMETER, Metric::L2, K::ANY>::isClusterable(float beta, int d, const vector<Point>& dataset, Dist dist) {
         throw std::runtime_error("Not implemented: SamplingAlgorithm<Cost::DIAMETER, Metric::ANY, K::ANY>");
     }
-
-
 }
 
 #endif //TESTINGOFCLUSTERING_ABSTRACTSAMPLINGALGO_H

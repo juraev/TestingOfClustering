@@ -7,7 +7,6 @@ using std::vector, std::cout;
 int main() {
 
 
-    SamplingAlgorithm<Cost::RADIUS, Metric::L2, K::ONE> samplingAlgorithm{0.5f, 4.0f};
 
     Dist dist_l2 = [](const Point& a, const Point& b, int d){
         double res = 0;
@@ -18,6 +17,8 @@ int main() {
     };
 
     auto dataset = vector<clustering::Point>{{1}, {2}, {3}, {9.01}};
+
+    SamplingAlgorithm<Cost::RADIUS, Metric::L2, K::ONE> samplingAlgorithm{0.5f, 4.0f};
 
     cout << samplingAlgorithm.isClusterable(0.5, 1, dataset, dist_l2);
 

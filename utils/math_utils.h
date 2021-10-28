@@ -7,7 +7,7 @@
 using namespace std;
 
 template <typename T>
-vector<T> VecAdd(vector<T> v1, vector<T> v2) {
+vector<T> VecAdd(const vector<T>& v1, const vector<T>& v2) {
 	assert(v1.size() == v2.size());
 	vector<T> result;
 	transform(
@@ -18,7 +18,7 @@ vector<T> VecAdd(vector<T> v1, vector<T> v2) {
 };
 
 template <typename T>
-vector<T> VecDiff(vector<T> v1, vector<T> v2) {
+vector<T> VecDiff(const vector<T>& v1, const vector<T>& v2) {
 	assert(v1.size() == v2.size());
 	vector<T> result;
 	transform(
@@ -29,7 +29,7 @@ vector<T> VecDiff(vector<T> v1, vector<T> v2) {
 };
 
 template <typename T>
-vector<T> VecMul(vector<T> v1, vector<T> v2) {
+vector<T> VecMul(const vector<T>& v1, const vector<T>& v2) {
 	assert(v1.size() == v2.size());
 	vector<T> result;
 	transform(
@@ -40,9 +40,9 @@ vector<T> VecMul(vector<T> v1, vector<T> v2) {
 };
 
 template <typename T>
-double VecNorm(vector<T> v) {
+double VecNorm(const vector<T>& v) {
 	vector<T> sq = VecMul<T>(v, v);
 	double s = double(accumulate(
-		sq.begin(), sq.end(), 0));
+		sq.begin(), sq.end(), 0.0));
 	return sqrt(s);
 };

@@ -11,7 +11,7 @@ ExperimentData: the structure that contains the data and relevant information fo
         * N (int): number of points 
         * D (int): number of dimensions
         * k (int): number of clusters
-        * b (double): the diameter/radius
+        * b (double): the diameter or radius
         * beta (double): the data is about epsilon-far from (k, (1+beta)b) clusterable
 	* max_beta (double): the data is guranteed (k, (1+max_beta)b) clusterable
 	* epsilon (double): portion of points to remove to be clusterable 

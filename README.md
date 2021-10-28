@@ -17,6 +17,6 @@ ExperimentData: the structure that contains the data and relevant information fo
 * epsilon (double): portion of points to remove to be clusterable 
 * metric (string): "euclidean" or "chebyshev"
 * cost: "radius" or "diameter"
-To load the data, put the data in datasets. The folder includes all data and meta-data described about and a "data.jpg" that provides visualization of the data.
+To load the data, put the data in datasets. The folder includes all data and meta-data described about and a "data.jpg" that provides visualization of the data. ([example](https://nusu-my.sharepoint.com/:u:/g/personal/e0248120_u_nus_edu/EaADFPACn6NMvhXVwD6wouQBAqX0xpVRikhrR6ZQ0aTlVQ))
 
 (For details please check utils/data.h)

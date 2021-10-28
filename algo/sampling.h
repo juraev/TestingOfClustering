@@ -8,6 +8,7 @@
 #include <stdexcept>
 #include <functional>
 #include <random>
+#include "euclidean_center.h"
 
 namespace clustering {
 
@@ -16,7 +17,7 @@ namespace clustering {
 
     // a function to calculate distance between two points
     // it is supposed to be provided by the client of the library
-    using Dist=std::function<double(Point, Point)>;
+    using Dist=std::function<double(const Point&, const Point&, int)>;
 
     //declarations
 
@@ -35,7 +36,7 @@ namespace clustering {
     class BaseAlgorithm {
     protected:
         std::mt19937 myrand;
-        float _epilon;
+        float _epsilon;
         float _b;
     };
 
@@ -50,7 +51,7 @@ namespace clustering {
     class SamplingAlgorithm : BaseAlgorithm {
     public:
         explicit SamplingAlgorithm(float epsilon, float b/*dist*/);
-        bool isClusterable(const vector<Point>&, Dist);
+        bool isClusterable(float beta, int d, const vector<Point>&, Dist);
     };
 
     /**
@@ -62,7 +63,7 @@ namespace clustering {
     class SamplingAlgorithm<Cost::RADIUS, Metric::L2, kkk> : BaseAlgorithm {
     public:
         explicit SamplingAlgorithm(float epsilon, float b);
-        bool isClusterable(const vector<Point>&, Dist);
+        bool isClusterable(float beta, int d, const vector<Point>&, Dist);
     };
 
     // definitions
@@ -77,7 +78,7 @@ namespace clustering {
      */
     template<Cost cost, Metric metric, K k>
     SamplingAlgorithm<cost, metric, k>::SamplingAlgorithm(float epsilon, float b) {
-        _epilon = epsilon;
+        _epsilon = epsilon;
         _b = b;
         std::random_device rd;
         myrand = std::mt19937(rd());
@@ -93,7 +94,7 @@ namespace clustering {
      */
     template<K k>
     SamplingAlgorithm<Cost::RADIUS, Metric::L2, k> ::SamplingAlgorithm(float epsilon, float b) {
-        _epilon = epsilon;
+        _epsilon = epsilon;
         _b = b;
         std::random_device rd;
         myrand = std::mt19937(rd());
@@ -105,7 +106,7 @@ namespace clustering {
      * @return
      */
     template<>
-    bool SamplingAlgorithm<Cost::RADIUS, Metric::L2, K::ANY>::isClusterable(const vector<Point>& dataset, Dist dist) {
+    bool SamplingAlgorithm<Cost::RADIUS, Metric::L2, K::ANY>::isClusterable(float beta, int d, const vector<Point>& dataset, Dist dist) {
         throw std::runtime_error("Not implemented: SamplingAlgorithm<Cost::RADIUS, Metric::L2, k>");
     }
 
@@ -115,8 +116,35 @@ namespace clustering {
      * @return
      */
     template<>
-    bool SamplingAlgorithm<Cost::RADIUS, Metric::L2, K::ONE>::isClusterable(const vector<Point>& dataset, Dist dist) {
-        throw std::runtime_error("There is no algorithm: SamplingAlgorithm<Cost::RADIUS, Metric::L2, K::ONE>");
+    bool SamplingAlgorithm<Cost::RADIUS, Metric::L2, K::ONE>::isClusterable(float beta, int d, const vector<Point>& dataset, Dist dist) {
+        int m = 5 * floor(log(1/beta) / (_epsilon * beta));
+        int n = dataset.size();
+
+        std::mt19937& mt = myrand;
+        std::uniform_int_distribution<int> distribution{0, n - 1};
+
+        auto gen = [&mt, &distribution](){
+            return distribution(mt);
+        };
+
+        vector<int> indices(m, 0);
+        std::generate(indices.begin(), indices.end(), gen);
+
+        vector<Cgal_Point> sample(m);
+
+        FT coord[d];
+
+        int i = 0;
+        for(int ind : indices){
+            int j = 0;
+            for (double x : dataset[ind])
+                coord[j ++] = FT{x};
+            sample[i ++] = Cgal_Point (d, coord, coord + d);
+        }
+
+        double rad = radius(sample, d);
+
+        return rad <= _b;
     }
 
     /**
@@ -125,8 +153,30 @@ namespace clustering {
      * @return
      */
     template<>
-    bool SamplingAlgorithm<Cost::DIAMETER, Metric::L2, K::ONE>::isClusterable(const vector<Point>& dataset, Dist dist) {
-        throw std::runtime_error("Not implemented: SamplingAlgorithm<Cost::DIAMETER, Metric::L2, K::ONE>");
+    bool SamplingAlgorithm<Cost::DIAMETER, Metric::L2, K::ONE>::isClusterable(float beta, int d, const vector<Point>& dataset, Dist dist) {
+
+        int m = 2 * floor(1 / _epsilon * pow(d, 3 / 2) * log(1 / beta) * pow(2 / beta, d));
+        int n = dataset.size();
+
+        vector<int> indices(m, 0);
+
+        std::mt19937& mt = myrand;
+        std::uniform_int_distribution<int> distribution{0, n - 1};
+
+        auto gen = [&mt, &distribution](){
+            return distribution(mt);
+        };
+
+        std::generate(indices.begin(), indices.end(), gen);
+
+        for (int i : indices){
+            for (int j : indices) {
+                if (dist(dataset[i], dataset[j], d) > _b){
+                    return false;
+                }
+            }
+        }
+        return true;
     }
 
     /**
@@ -135,7 +185,7 @@ namespace clustering {
      * @return
      */
     template<>
-    bool SamplingAlgorithm<Cost::DIAMETER, Metric::L2, K::ANY>::isClusterable(const vector<Point>& dataset, Dist dist) {
+    bool SamplingAlgorithm<Cost::DIAMETER, Metric::L2, K::ANY>::isClusterable(float beta, int d, const vector<Point>& dataset, Dist dist) {
         throw std::runtime_error("Not implemented: SamplingAlgorithm<Cost::DIAMETER, Metric::ANY, K::ANY>");
     }
 }

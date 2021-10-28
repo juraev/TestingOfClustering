@@ -99,6 +99,9 @@ TestingOfClustering_EXTERNAL_OBJECTS =
 
 TestingOfClustering: CMakeFiles/TestingOfClustering.dir/main.cpp.o
 TestingOfClustering: CMakeFiles/TestingOfClustering.dir/build.make
+TestingOfClustering: /usr/local/lib/libgmpxx.dylib
+TestingOfClustering: /usr/local/lib/libmpfr.dylib
+TestingOfClustering: /usr/local/lib/libgmp.dylib
 TestingOfClustering: CMakeFiles/TestingOfClustering.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/user/CLionProjects/TestingOfClustering/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable TestingOfClustering"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/TestingOfClustering.dir/link.txt --verbose=$(VERBOSE)

@@ -4,10 +4,10 @@ Implementation of the algorithms for testing (k, b)-clusterability of a collecti
 Based on this [paper](https://doi.org/10.1137/S0036144503437178) by Alon et al.
 
 ExperimentData: the structure that contains the data and relevant information for the experiment.
-    1. centers (a vector of k vectors of dimension D): the representatives of the clusters.
-    2. points (a vector of N vectors of dimension D): all data points 
-    3. labels (a vector of integers): the cluster that the point is assigned to; '-1' denotes that it's an unclassifiable outliers.
-    4. configs (DataConfigs): 
+1. centers (a vector of k vectors of dimension D): the representatives of the clusters.
+2. points (a vector of N vectors of dimension D): all data points 
+3. labels (a vector of integers): the cluster that the point is assigned to; '-1' denotes that it's an unclassifiable outliers.
+4. configs (DataConfigs): 
         * N (int): number of points 
         * D (int): number of dimensions
         * k (int): number of clusters

@@ -1,17 +1,17 @@
 #include "metrics.h"
 using namespace std;
 
-double PointDist(vector<double> p1, vector<double> p2) {
+double PointDist(const vector<double>& p1, const vector<double>& p2) {
 	vector<double> diff = VecDiff<double>(p1, p2);
 	return VecNorm<double>(diff);
 }
 
-double ComputeClusterRadius(vector<vector<double> > points) {
+double ComputeClusterRadius(const vector<vector<double> >& points) {
 	// TODO
 	return 0.0;
 }
 
-double ComputeClusterDiameter(vector<vector<double> > points) {
+double ComputeClusterDiameter(const vector<vector<double> >& points) {
 	double max_dist = 0.0;
 	for (int i = 0; i < points.size(); i++) {
 		for (int j = i + 1; j < points.size(); j++) {

@@ -1,10 +1,11 @@
-#include <iostream>
 #include <vector>
 #include <string>
 #include <fstream>
 #include <sstream>
 #include <stdlib.h>
+#include <filesystem>
 using namespace std;
+namespace fs=filesystem;
 
 struct DataConfigs {
 	int N; 
@@ -26,9 +27,9 @@ struct ExperimentData {
 };
 
 // read file of vectors (points)
-vector<vector<double> > readVectors(const string& source_path);
+vector<vector<double> > readVectors(fs::path source_path);
 // read file of labels
-vector<int> readLabels(const string& source_path);
+vector<int> readLabels(fs::path source_path);
 // read file of the configurations of data generation
-DataConfigs getDataConfigs(const string& source_path);
-ExperimentData loadExperimentData(const string& source_path);
+DataConfigs getDataConfigs(fs::path source_path);
+ExperimentData loadExperimentData(fs::path source_path);

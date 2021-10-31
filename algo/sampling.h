@@ -36,8 +36,8 @@ namespace clustering {
     class BaseAlgorithm {
     protected:
         std::mt19937 myrand;
-        float _epsilon;
-        float _b;
+        double _epsilon;
+        double _b;
     };
 
     /**
@@ -50,8 +50,8 @@ namespace clustering {
     template<Cost cost, Metric metric, K k = K::ANY>
     class SamplingAlgorithm : BaseAlgorithm {
     public:
-        explicit SamplingAlgorithm(float epsilon, float b/*dist*/);
-        bool isClusterable(float beta, int d, const vector<Point>&, Dist);
+        explicit SamplingAlgorithm(double epsilon, double b/*dist*/);
+        bool isClusterable(double beta, int d, const vector<Point>&, Dist, int);
     };
 
     /**
@@ -62,8 +62,8 @@ namespace clustering {
     template<K kkk>
     class SamplingAlgorithm<Cost::RADIUS, Metric::L2, kkk> : BaseAlgorithm {
     public:
-        explicit SamplingAlgorithm(float epsilon, float b);
-        bool isClusterable(float beta, int d, const vector<Point>&, Dist);
+        explicit SamplingAlgorithm(double epsilon, double b);
+        bool isClusterable(double beta, int d, const vector<Point>&, Dist, int);
     };
 
     // definitions
@@ -77,7 +77,7 @@ namespace clustering {
      * @param b
      */
     template<Cost cost, Metric metric, K k>
-    SamplingAlgorithm<cost, metric, k>::SamplingAlgorithm(float epsilon, float b) {
+    SamplingAlgorithm<cost, metric, k>::SamplingAlgorithm(double epsilon, double b) {
         _epsilon = epsilon;
         _b = b;
         std::random_device rd;
@@ -93,7 +93,7 @@ namespace clustering {
      * @param b
      */
     template<K k>
-    SamplingAlgorithm<Cost::RADIUS, Metric::L2, k> ::SamplingAlgorithm(float epsilon, float b) {
+    SamplingAlgorithm<Cost::RADIUS, Metric::L2, k> ::SamplingAlgorithm(double epsilon, double b) {
         _epsilon = epsilon;
         _b = b;
         std::random_device rd;
@@ -106,17 +106,17 @@ namespace clustering {
      * @return
      */
     template<>
-    bool SamplingAlgorithm<Cost::RADIUS, Metric::L2, K::ANY>::isClusterable(float beta, int d, const vector<Point>& dataset, Dist dist) {
+    bool SamplingAlgorithm<Cost::RADIUS, Metric::L2, K::ANY>::isClusterable(double beta, int d, const vector<Point>& dataset, Dist dist, int k) {
         throw std::runtime_error("Not implemented: SamplingAlgorithm<Cost::RADIUS, Metric::L2, k>");
     }
 
     /**
      * Specialized implementation for radius cost and L2 metric
-     * for k=1. There is no specific algorithm.
+     * for k=1.
      * @return
      */
     template<>
-    bool SamplingAlgorithm<Cost::RADIUS, Metric::L2, K::ONE>::isClusterable(float beta, int d, const vector<Point>& dataset, Dist dist) {
+    bool SamplingAlgorithm<Cost::RADIUS, Metric::L2, K::ONE>::isClusterable(double beta, int d, const vector<Point>& dataset, Dist dist, int k) {
         int m = 5 * floor(log(1/beta) / (_epsilon * beta));
         int n = dataset.size();
 
@@ -149,11 +149,11 @@ namespace clustering {
 
     /**
      * Specialized implementation for diameter cost and L2 metric
-     * and any k
+     * and k = 1
      * @return
      */
     template<>
-    bool SamplingAlgorithm<Cost::DIAMETER, Metric::L2, K::ONE>::isClusterable(float beta, int d, const vector<Point>& dataset, Dist dist) {
+    bool SamplingAlgorithm<Cost::DIAMETER, Metric::L2, K::ONE>::isClusterable(double beta, int d, const vector<Point>& dataset, Dist dist, int k) {
 
         int m = 2 * floor(1 / _epsilon * pow(d, 3 / 2) * log(1 / beta) * pow(2 / beta, d));
         int n = dataset.size();
@@ -185,8 +185,34 @@ namespace clustering {
      * @return
      */
     template<>
-    bool SamplingAlgorithm<Cost::DIAMETER, Metric::L2, K::ANY>::isClusterable(float beta, int d, const vector<Point>& dataset, Dist dist) {
-        throw std::runtime_error("Not implemented: SamplingAlgorithm<Cost::DIAMETER, Metric::ANY, K::ANY>");
+    bool SamplingAlgorithm<Cost::DIAMETER, Metric::L2, K::ANY>::isClusterable(double beta, int d, const vector<Point>& dataset, Dist dist, int k) {
+        int m = 2 * floor((k*k) * log(k) / _epsilon * d * pow((2/beta), 2*d));
+        int n = dataset.size();
+
+        std::cout << n << " " << m << std::endl;
+
+        if(m > 300) {
+            std::cout << "interrupting \n";
+            return false;
+        }
+
+        vector<int> indices(m, 0);
+
+        std::mt19937& mt = myrand;
+        std::uniform_int_distribution<int> distribution{0, n - 1};
+
+        auto gen = [&mt, &distribution](){
+            return distribution(mt);
+        };
+
+        std::generate(indices.begin(), indices.end(), gen);
+
+        vector<Point> samples(m);
+
+        for(int i = 0; i < m; i ++)
+            samples[i] = dataset[indices[i]];
+
+        return euclidean_k_center(samples, k, _b, dist, d);
     }
 }
 

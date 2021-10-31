@@ -7,6 +7,10 @@
 #IncludeRegexTransform: 
 
 /Users/user/CLionProjects/TestingOfClustering/algo/euclidean_center.h
+vector
+-
+functional
+-
 CGAL/Cartesian_d.h
 -
 CGAL/Random.h
@@ -14,8 +18,6 @@ CGAL/Random.h
 CGAL/Exact_rational.h
 -
 CGAL/Min_sphere_of_spheres_d.h
--
-vector
 -
 
 /Users/user/CLionProjects/TestingOfClustering/algo/sampling.h
@@ -30,6 +32,8 @@ euclidean_center.h
 
 /Users/user/CLionProjects/TestingOfClustering/main.cpp
 iostream
+-
+random
 -
 algo/sampling.h
 /Users/user/CLionProjects/TestingOfClustering/algo/sampling.h

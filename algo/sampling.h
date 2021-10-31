@@ -36,8 +36,8 @@ namespace clustering {
     class BaseAlgorithm {
     protected:
         std::mt19937 myrand;
-        double _epsilon;
-        double _b;
+        double _epsilon{};
+        double _b{};
     };
 
     /**

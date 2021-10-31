@@ -1,3 +1,9 @@
 /Users/user/CLionProjects/TestingOfClustering/cmake-build-debug/CMakeFiles/rebuild_cache.dir
 /Users/user/CLionProjects/TestingOfClustering/cmake-build-debug/CMakeFiles/edit_cache.dir
 /Users/user/CLionProjects/TestingOfClustering/cmake-build-debug/CMakeFiles/TestingOfClustering.dir
+/Users/user/CLionProjects/TestingOfClustering/cmake-build-debug/utils/CMakeFiles/rebuild_cache.dir
+/Users/user/CLionProjects/TestingOfClustering/cmake-build-debug/utils/CMakeFiles/edit_cache.dir
+/Users/user/CLionProjects/TestingOfClustering/cmake-build-debug/utils/CMakeFiles/utils.dir
+/Users/user/CLionProjects/TestingOfClustering/cmake-build-debug/algo/CMakeFiles/rebuild_cache.dir
+/Users/user/CLionProjects/TestingOfClustering/cmake-build-debug/algo/CMakeFiles/edit_cache.dir
+/Users/user/CLionProjects/TestingOfClustering/cmake-build-debug/algo/CMakeFiles/algo.dir

@@ -5,6 +5,7 @@ CMakeFiles/TestingOfClustering.dir/main.cpp.o
  /Users/user/CLionProjects/TestingOfClustering/algo/euclidean_center.h
  /Users/user/CLionProjects/TestingOfClustering/algo/sampling.h
  /Users/user/CLionProjects/TestingOfClustering/main.cpp
+ /Users/user/CLionProjects/TestingOfClustering/utils/data.h
  /usr/local/include/boost/any.hpp
  /usr/local/include/boost/array.hpp
  /usr/local/include/boost/assert.hpp

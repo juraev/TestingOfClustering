@@ -74,24 +74,66 @@ CMAKE_BINARY_DIR = /Users/user/CLionProjects/TestingOfClustering/cmake-build-deb
 
 # The main recursive "all" target.
 all: CMakeFiles/TestingOfClustering.dir/all
+all: utils/all
+all: algo/all
 
 .PHONY : all
 
 # The main recursive "preinstall" target.
-preinstall:
+preinstall: utils/preinstall
+preinstall: algo/preinstall
 
 .PHONY : preinstall
 
 # The main recursive "clean" target.
 clean: CMakeFiles/TestingOfClustering.dir/clean
+clean: utils/clean
+clean: algo/clean
 
 .PHONY : clean
+
+#=============================================================================
+# Directory level rules for directory algo
+
+# Recursive "all" directory target.
+algo/all: algo/CMakeFiles/algo.dir/all
+
+.PHONY : algo/all
+
+# Recursive "preinstall" directory target.
+algo/preinstall:
+
+.PHONY : algo/preinstall
+
+# Recursive "clean" directory target.
+algo/clean: algo/CMakeFiles/algo.dir/clean
+
+.PHONY : algo/clean
+
+#=============================================================================
+# Directory level rules for directory utils
+
+# Recursive "all" directory target.
+utils/all: utils/CMakeFiles/utils.dir/all
+
+.PHONY : utils/all
+
+# Recursive "preinstall" directory target.
+utils/preinstall:
+
+.PHONY : utils/preinstall
+
+# Recursive "clean" directory target.
+utils/clean: utils/CMakeFiles/utils.dir/clean
+
+.PHONY : utils/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/TestingOfClustering.dir
 
 # All Build rule for target.
-CMakeFiles/TestingOfClustering.dir/all:
+CMakeFiles/TestingOfClustering.dir/all: utils/CMakeFiles/utils.dir/all
+CMakeFiles/TestingOfClustering.dir/all: algo/CMakeFiles/algo.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/TestingOfClustering.dir/build.make CMakeFiles/TestingOfClustering.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/TestingOfClustering.dir/build.make CMakeFiles/TestingOfClustering.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/user/CLionProjects/TestingOfClustering/cmake-build-debug/CMakeFiles --progress-num=1,2 "Built target TestingOfClustering"
@@ -99,7 +141,7 @@ CMakeFiles/TestingOfClustering.dir/all:
 
 # Build rule for subdir invocation for target.
 CMakeFiles/TestingOfClustering.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/user/CLionProjects/TestingOfClustering/cmake-build-debug/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/user/CLionProjects/TestingOfClustering/cmake-build-debug/CMakeFiles 7
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/TestingOfClustering.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/user/CLionProjects/TestingOfClustering/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/TestingOfClustering.dir/rule
@@ -113,6 +155,60 @@ TestingOfClustering: CMakeFiles/TestingOfClustering.dir/rule
 CMakeFiles/TestingOfClustering.dir/clean:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/TestingOfClustering.dir/build.make CMakeFiles/TestingOfClustering.dir/clean
 .PHONY : CMakeFiles/TestingOfClustering.dir/clean
+
+#=============================================================================
+# Target rules for target utils/CMakeFiles/utils.dir
+
+# All Build rule for target.
+utils/CMakeFiles/utils.dir/all:
+	$(MAKE) $(MAKESILENT) -f utils/CMakeFiles/utils.dir/build.make utils/CMakeFiles/utils.dir/depend
+	$(MAKE) $(MAKESILENT) -f utils/CMakeFiles/utils.dir/build.make utils/CMakeFiles/utils.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/user/CLionProjects/TestingOfClustering/cmake-build-debug/CMakeFiles --progress-num=5,6,7 "Built target utils"
+.PHONY : utils/CMakeFiles/utils.dir/all
+
+# Build rule for subdir invocation for target.
+utils/CMakeFiles/utils.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/user/CLionProjects/TestingOfClustering/cmake-build-debug/CMakeFiles 3
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 utils/CMakeFiles/utils.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/user/CLionProjects/TestingOfClustering/cmake-build-debug/CMakeFiles 0
+.PHONY : utils/CMakeFiles/utils.dir/rule
+
+# Convenience name for target.
+utils: utils/CMakeFiles/utils.dir/rule
+
+.PHONY : utils
+
+# clean rule for target.
+utils/CMakeFiles/utils.dir/clean:
+	$(MAKE) $(MAKESILENT) -f utils/CMakeFiles/utils.dir/build.make utils/CMakeFiles/utils.dir/clean
+.PHONY : utils/CMakeFiles/utils.dir/clean
+
+#=============================================================================
+# Target rules for target algo/CMakeFiles/algo.dir
+
+# All Build rule for target.
+algo/CMakeFiles/algo.dir/all:
+	$(MAKE) $(MAKESILENT) -f algo/CMakeFiles/algo.dir/build.make algo/CMakeFiles/algo.dir/depend
+	$(MAKE) $(MAKESILENT) -f algo/CMakeFiles/algo.dir/build.make algo/CMakeFiles/algo.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/user/CLionProjects/TestingOfClustering/cmake-build-debug/CMakeFiles --progress-num=3,4 "Built target algo"
+.PHONY : algo/CMakeFiles/algo.dir/all
+
+# Build rule for subdir invocation for target.
+algo/CMakeFiles/algo.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/user/CLionProjects/TestingOfClustering/cmake-build-debug/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 algo/CMakeFiles/algo.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/user/CLionProjects/TestingOfClustering/cmake-build-debug/CMakeFiles 0
+.PHONY : algo/CMakeFiles/algo.dir/rule
+
+# Convenience name for target.
+algo: algo/CMakeFiles/algo.dir/rule
+
+.PHONY : algo
+
+# clean rule for target.
+algo/CMakeFiles/algo.dir/clean:
+	$(MAKE) $(MAKESILENT) -f algo/CMakeFiles/algo.dir/build.make algo/CMakeFiles/algo.dir/clean
+.PHONY : algo/CMakeFiles/algo.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

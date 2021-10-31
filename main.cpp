@@ -13,7 +13,7 @@ int main() {
     fs::path foldePath = fs::path(__FILE__).parent_path();
     fs::path dsPath = foldePath / fs::path("datasets") / fs::path("example");
     ExperimentData data = loadExperimentData(dsPath);
-    
+
     // TODO: apply the algorithms to the data
 
     Dist dist_l2 = [](const Point& a, const Point& b, int d){

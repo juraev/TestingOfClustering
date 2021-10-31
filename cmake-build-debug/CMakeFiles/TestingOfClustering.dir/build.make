@@ -99,6 +99,8 @@ TestingOfClustering_EXTERNAL_OBJECTS =
 
 TestingOfClustering: CMakeFiles/TestingOfClustering.dir/main.cpp.o
 TestingOfClustering: CMakeFiles/TestingOfClustering.dir/build.make
+TestingOfClustering: utils/libutils.a
+TestingOfClustering: algo/libalgo.a
 TestingOfClustering: /usr/local/lib/libgmpxx.dylib
 TestingOfClustering: /usr/local/lib/libmpfr.dylib
 TestingOfClustering: /usr/local/lib/libgmp.dylib

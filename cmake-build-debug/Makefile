@@ -143,6 +143,32 @@ TestingOfClustering/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/TestingOfClustering.dir/build.make CMakeFiles/TestingOfClustering.dir/build
 .PHONY : TestingOfClustering/fast
 
+#=============================================================================
+# Target rules for targets named utils
+
+# Build rule for target.
+utils: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 utils
+.PHONY : utils
+
+# fast build rule for target.
+utils/fast:
+	$(MAKE) $(MAKESILENT) -f utils/CMakeFiles/utils.dir/build.make utils/CMakeFiles/utils.dir/build
+.PHONY : utils/fast
+
+#=============================================================================
+# Target rules for targets named algo
+
+# Build rule for target.
+algo: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 algo
+.PHONY : algo
+
+# fast build rule for target.
+algo/fast:
+	$(MAKE) $(MAKESILENT) -f algo/CMakeFiles/algo.dir/build.make algo/CMakeFiles/algo.dir/build
+.PHONY : algo/fast
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -179,6 +205,8 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... TestingOfClustering"
+	@echo "... algo"
+	@echo "... utils"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

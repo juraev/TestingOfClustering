@@ -5,7 +5,7 @@
 		<Option title="TestingOfClustering"/>
 		<Option makefile_is_custom="1"/>
 		<Option compiler="gcc"/>
-		<Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\usr\;CMake Files\..\..\..\..\usr\local\;CMake Files\..\..\..\..\usr\local\opt\;CMake Files\..\..\..\..\usr\local\opt\cgal\;CMake Files\..\..\..\..\usr\local\opt\cgal\lib\;CMake Files\..\..\..\..\usr\local\opt\cgal\lib\cmake\;CMake Files\..\..\..\..\usr\local\opt\cgal\lib\cmake\CGAL\;CMake Files\..\..\..\..\usr\local\lib\;CMake Files\..\..\..\..\usr\local\lib\cmake\;CMake Files\..\..\..\..\usr\local\lib\cmake\Boost-1.76.0\;CMake Files\..\..\..\..\usr\local\lib\cmake\boost_headers-1.76.0\;"/>
+		<Option virtualFolders="CMake Files\;CMake Files\utils\;CMake Files\algo\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\usr\;CMake Files\..\..\..\..\usr\local\;CMake Files\..\..\..\..\usr\local\opt\;CMake Files\..\..\..\..\usr\local\opt\cgal\;CMake Files\..\..\..\..\usr\local\opt\cgal\lib\;CMake Files\..\..\..\..\usr\local\opt\cgal\lib\cmake\;CMake Files\..\..\..\..\usr\local\opt\cgal\lib\cmake\CGAL\;CMake Files\..\..\..\..\usr\local\lib\;CMake Files\..\..\..\..\usr\local\lib\cmake\;CMake Files\..\..\..\..\usr\local\lib\cmake\Boost-1.76.0\;CMake Files\..\..\..\..\usr\local\lib\cmake\boost_headers-1.76.0\;"/>
 		<Build>
 			<Target title="all">
 				<Option working_dir="/Users/user/CLionProjects/TestingOfClustering/cmake-build-debug"/>
@@ -85,12 +85,132 @@
 					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/user/CLionProjects/TestingOfClustering/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
+			<Target title="utils">
+				<Option output="/Users/user/CLionProjects/TestingOfClustering/cmake-build-debug/utils/libutils.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/user/CLionProjects/TestingOfClustering/cmake-build-debug/utils"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/12.0.5/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/user/CLionProjects/TestingOfClustering/cmake-build-debug/utils/Makefile&quot;  VERBOSE=1 utils"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/user/CLionProjects/TestingOfClustering/cmake-build-debug/utils/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/user/CLionProjects/TestingOfClustering/cmake-build-debug/utils/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/user/CLionProjects/TestingOfClustering/cmake-build-debug/utils/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="utils/fast">
+				<Option output="/Users/user/CLionProjects/TestingOfClustering/cmake-build-debug/utils/libutils.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/user/CLionProjects/TestingOfClustering/cmake-build-debug/utils"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/12.0.5/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/user/CLionProjects/TestingOfClustering/cmake-build-debug/utils/Makefile&quot;  VERBOSE=1 utils/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/user/CLionProjects/TestingOfClustering/cmake-build-debug/utils/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/user/CLionProjects/TestingOfClustering/cmake-build-debug/utils/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/user/CLionProjects/TestingOfClustering/cmake-build-debug/utils/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="algo">
+				<Option output="/Users/user/CLionProjects/TestingOfClustering/cmake-build-debug/algo/libalgo.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/user/CLionProjects/TestingOfClustering/cmake-build-debug/algo"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DCGAL_USE_GMPXX=1"/>
+					<Add option="-DBOOST_ALL_NO_LIB"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/local/opt/cgal/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/12.0.5/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/user/CLionProjects/TestingOfClustering/cmake-build-debug/algo/Makefile&quot;  VERBOSE=1 algo"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/user/CLionProjects/TestingOfClustering/cmake-build-debug/algo/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/user/CLionProjects/TestingOfClustering/cmake-build-debug/algo/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/user/CLionProjects/TestingOfClustering/cmake-build-debug/algo/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="algo/fast">
+				<Option output="/Users/user/CLionProjects/TestingOfClustering/cmake-build-debug/algo/libalgo.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/user/CLionProjects/TestingOfClustering/cmake-build-debug/algo"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DCGAL_USE_GMPXX=1"/>
+					<Add option="-DBOOST_ALL_NO_LIB"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/local/opt/cgal/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/12.0.5/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/user/CLionProjects/TestingOfClustering/cmake-build-debug/algo/Makefile&quot;  VERBOSE=1 algo/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/user/CLionProjects/TestingOfClustering/cmake-build-debug/algo/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/user/CLionProjects/TestingOfClustering/cmake-build-debug/algo/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/user/CLionProjects/TestingOfClustering/cmake-build-debug/algo/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
 		</Build>
+		<Unit filename="/Users/user/CLionProjects/TestingOfClustering/algo/euclidean_center.cpp">
+			<Option target="algo"/>
+		</Unit>
+		<Unit filename="/Users/user/CLionProjects/TestingOfClustering/algo/euclidean_center.h">
+			<Option target="algo"/>
+		</Unit>
+		<Unit filename="/Users/user/CLionProjects/TestingOfClustering/algo/sampling.h">
+			<Option target="algo"/>
+		</Unit>
 		<Unit filename="/Users/user/CLionProjects/TestingOfClustering/main.cpp">
 			<Option target="TestingOfClustering"/>
 		</Unit>
+		<Unit filename="/Users/user/CLionProjects/TestingOfClustering/utils/data.cpp">
+			<Option target="utils"/>
+		</Unit>
+		<Unit filename="/Users/user/CLionProjects/TestingOfClustering/utils/data.h">
+			<Option target="utils"/>
+		</Unit>
+		<Unit filename="/Users/user/CLionProjects/TestingOfClustering/utils/math_utils.h">
+			<Option target="utils"/>
+		</Unit>
+		<Unit filename="/Users/user/CLionProjects/TestingOfClustering/utils/metrics.cpp">
+			<Option target="utils"/>
+		</Unit>
+		<Unit filename="/Users/user/CLionProjects/TestingOfClustering/utils/metrics.h">
+			<Option target="utils"/>
+		</Unit>
 		<Unit filename="/Users/user/CLionProjects/TestingOfClustering/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/Users/user/CLionProjects/TestingOfClustering/utils/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\utils\"/>
+		</Unit>
+		<Unit filename="/Users/user/CLionProjects/TestingOfClustering/algo/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\algo\"/>
 		</Unit>
 		<Unit filename="/Users/user/CLionProjects/TestingOfClustering/../../../../usr/local/opt/cgal/lib/cmake/CGAL/CGALConfig.cmake">
 			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\opt\cgal\lib\cmake\CGAL\"/>

@@ -38,9 +38,11 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.17/Modules/Platform/UnixPaths.cmake"
   "/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.17/Modules/ProcessorCount.cmake"
   "../CMakeLists.txt"
+  "../algo/CMakeLists.txt"
   "CMakeFiles/3.17.3/CMakeCCompiler.cmake"
   "CMakeFiles/3.17.3/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.17.3/CMakeSystem.cmake"
+  "../utils/CMakeLists.txt"
   "/usr/local/lib/cmake/Boost-1.76.0/BoostConfig.cmake"
   "/usr/local/lib/cmake/Boost-1.76.0/BoostConfigVersion.cmake"
   "/usr/local/lib/cmake/boost_headers-1.76.0/boost_headers-config-version.cmake"
@@ -76,9 +78,13 @@ set(CMAKE_MAKEFILE_OUTPUTS
 # Byproducts of CMake generate step:
 set(CMAKE_MAKEFILE_PRODUCTS
   "CMakeFiles/CMakeDirectoryInformation.cmake"
+  "utils/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "algo/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/TestingOfClustering.dir/DependInfo.cmake"
+  "utils/CMakeFiles/utils.dir/DependInfo.cmake"
+  "algo/CMakeFiles/algo.dir/DependInfo.cmake"
   )

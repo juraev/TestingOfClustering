@@ -1,5 +1,6 @@
 #include <iostream>
 #include <filesystem>
+#include <random>
 #include "algo/sampling.h"
 #include "utils/data.h" 
 
@@ -23,11 +24,16 @@ int main() {
         return std::sqrt(res);
     };
 
-    auto dataset = vector<clustering::Point>{{1}, {2}, {3}, {9.01}};
+    int k = 2, d = 2, n = 1000;
+    double b = 100;
+    double beta = 1;
+    double epsilon = 8;
 
-    SamplingAlgorithm<Cost::RADIUS, Metric::L2, K::ONE> samplingAlgorithm{0.5f, 4.0f};
+    auto dataset = vector<clustering::Point>{{1, 0}, {2, 0}, {10, 0}, {14.000000000000001, 0}};
 
-    cout << samplingAlgorithm.isClusterable(0.5, 1, dataset, dist_l2);
+    SamplingAlgorithm<Cost::DIAMETER, Metric::L2, K::ANY> samplingAlgorithm{epsilon, b};
+
+    cout << samplingAlgorithm.isClusterable(beta, d, dataset, dist_l2, k);
 
     return 0;
 }

@@ -28,10 +28,10 @@ double radius(const std::vector<Cgal_Point>& points, const int D){
 }
 
 bool euclidean_k_center(const vector<Point> &sample, int k, double b, const Dist &dist, int d) {
-    int n = sample.size();
+    int n = static_cast<int>(sample.size());
 
     auto check = [&](vector<int> &part) {
-        vector<Point> partitions[k];
+        vector<vector<Point>> partitions(k);
 
         for (int i = 0; i < n; i++) {
             partitions[part[i]].push_back(sample[i]);
@@ -39,7 +39,7 @@ bool euclidean_k_center(const vector<Point> &sample, int k, double b, const Dist
         for (auto P : partitions) {
             if (P.empty()) continue;
 
-            int c = P.size();
+            int c = static_cast<int>(P.size());
 
             for (int i = 0; i < c; i++) {
                 for (int j = i + 1; j < c; j++) {

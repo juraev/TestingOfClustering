@@ -117,8 +117,8 @@ namespace clustering {
      */
     template<>
     bool SamplingAlgorithm<Cost::RADIUS, Metric::L2, K::ONE>::isClusterable(double beta, int d, const vector<Point>& dataset, Dist dist, int k) {
-        int m = 5 * floor(log(1/beta) / (_epsilon * beta));
-        int n = dataset.size();
+        int m = static_cast<int>(5 * floor(log(1/beta) / (_epsilon * beta)));
+        int n = static_cast<int>(dataset.size());
 
         std::mt19937& mt = myrand;
         std::uniform_int_distribution<int> distribution{0, n - 1};
@@ -131,15 +131,15 @@ namespace clustering {
         std::generate(indices.begin(), indices.end(), gen);
 
         vector<Cgal_Point> sample(m);
-
-        FT coord[d];
+		vector<FT> coord_vec(d);
+		FT* coord = &coord_vec[0];
 
         int i = 0;
         for(int ind : indices){
             int j = 0;
             for (double x : dataset[ind])
-                coord[j ++] = FT{x};
-            sample[i ++] = Cgal_Point (d, coord, coord + d);
+                coord[j++] = FT{x};
+            sample[i++] = Cgal_Point (d, coord, coord + d);
         }
 
         double rad = radius(sample, d);
@@ -155,8 +155,8 @@ namespace clustering {
     template<>
     bool SamplingAlgorithm<Cost::DIAMETER, Metric::L2, K::ONE>::isClusterable(double beta, int d, const vector<Point>& dataset, Dist dist, int k) {
 
-        int m = 2 * floor(1 / _epsilon * pow(d, 3 / 2) * log(1 / beta) * pow(2 / beta, d));
-        int n = dataset.size();
+        int m = static_cast < int>(2 * floor(1 / _epsilon * pow(d, 3 / 2) * log(1 / beta) * pow(2 / beta, d)));
+        int n = static_cast<int>(dataset.size());
 
         vector<int> indices(m, 0);
 
@@ -186,8 +186,8 @@ namespace clustering {
      */
     template<>
     bool SamplingAlgorithm<Cost::DIAMETER, Metric::L2, K::ANY>::isClusterable(double beta, int d, const vector<Point>& dataset, Dist dist, int k) {
-        int m = 2 * floor((k*k) * log(k) / _epsilon * d * pow((2/beta), 2*d));
-        int n = dataset.size();
+        int m = static_cast < int>(2 * floor((k*k) * log(k) / _epsilon * d * pow((2/beta), 2*d)));
+        int n = static_cast<int>(dataset.size());
 
         std::cout << n << " " << m << std::endl;
 

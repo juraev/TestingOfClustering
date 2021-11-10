@@ -154,7 +154,9 @@ using std::vector;
 using Point = vector<double>;
 using Dist = std::function<double(const Point&, const Point&, int)>;
 
-bool euclidean_k_center(const vector<Point>& sample, int k, double b, const Dist& dist, int d);
+bool euclidean_k_diameters(const vector<Point>& sample, int k, double b, const Dist& dist, int d);
+
+bool euclidean_k_centers(const vector<Point>& sample, int k, double b, const Dist& dist, int d);
 
 
 

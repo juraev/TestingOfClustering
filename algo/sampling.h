@@ -102,12 +102,45 @@ namespace clustering {
 
     /**
      * Specialized implementation for radius cost and L2 metric
-     * and any k
+     * and any k (argument k is ignored and not used if K::ONE is given as a template argument)
      * @return
      */
     template<>
     bool SamplingAlgorithm<Cost::RADIUS, Metric::L2, K::ANY>::isClusterable(double beta, int d, const vector<Point>& dataset, Dist dist, int k) {
-        throw std::runtime_error("Not implemented: SamplingAlgorithm<Cost::RADIUS, Metric::L2, k>");
+        int m = floor(d*k / _epsilon * log(d*k/_epsilon));
+        int n = dataset.size();
+
+        std::cout << n << " -- " << m << std::endl;
+
+        if(m > 300) {
+            std::cout << "too big m = " << m << ": interrupting... \n";
+            return false;
+        }
+
+        vector<int> indices(m, 0);
+
+        if (m < n) {
+
+            std::mt19937 &mt = myrand;
+            std::uniform_int_distribution<int> distribution{0, n - 1};
+
+            auto gen = [&mt, &distribution]() {
+                return distribution(mt);
+            };
+            std::generate(indices.begin(), indices.end(), gen);
+
+        } else {
+            m = n;
+            indices.resize(m);
+            std::iota(indices.begin(), indices.end(), 0);
+        }
+
+        vector<Point> samples(m);
+
+        for(int i = 0; i < m; i ++)
+            samples[i] = dataset[indices[i]];
+
+        return euclidean_k_centers(samples, k, _b, dist, d);
     }
 
     /**
@@ -117,7 +150,7 @@ namespace clustering {
      */
     template<>
     bool SamplingAlgorithm<Cost::RADIUS, Metric::L2, K::ONE>::isClusterable(double beta, int d, const vector<Point>& dataset, Dist dist, int k) {
-        int m = 5 * floor(log(1/beta) / (_epsilon * beta));
+        int m = 2 * floor(log(1/beta) / (_epsilon * beta));
         int n = dataset.size();
 
         std::mt19937& mt = myrand;
@@ -126,6 +159,8 @@ namespace clustering {
         auto gen = [&mt, &distribution](){
             return distribution(mt);
         };
+
+        std::cout << n << " " << m << std::endl;
 
         vector<int> indices(m, 0);
         std::generate(indices.begin(), indices.end(), gen);
@@ -192,7 +227,7 @@ namespace clustering {
         std::cout << n << " " << m << std::endl;
 
         if(m > 300) {
-            std::cout << "interrupting \n";
+            std::cout << "too big m = " << m << ": interrupting... \n";
             return false;
         }
 
@@ -212,7 +247,53 @@ namespace clustering {
         for(int i = 0; i < m; i ++)
             samples[i] = dataset[indices[i]];
 
-        return euclidean_k_center(samples, k, _b, dist, d);
+        return euclidean_k_diameters(samples, k, _b, dist, d);
+    }
+
+    vector<Point> generate_k_clusters(double b, int k, int d, int n){
+        std::random_device rd;
+        std::mt19937 mt(rd());
+        std::uniform_real_distribution<double> distribution{0, 1};
+        std::normal_distribution<double> stdn{0.0, 1.0};
+
+        int N = 100000;
+
+        vector<Point> centers(k);
+        vector<double> radii(k);
+
+        auto gen = [&mt, &distribution, N](){
+            return distribution(mt) * N;
+        };
+
+        for (int i = 0; i < k; i ++){
+            centers[i].resize(d);
+            generate(centers[i].begin(), centers[i].end(), gen);
+            radii[i] = b * 0.5 / (1 + mt() % 5);
+        }
+
+        vector<Point> dataset(n);
+
+        auto gen_points = [&mt, &stdn](){
+            return stdn(mt);
+        };
+
+        for (int i = 0; i < n; i++) {
+            dataset[i].resize(d);
+            generate(dataset[i].begin(), dataset[i].end(), gen_points);
+
+            double norm = std::accumulate(dataset[i].begin(), dataset[i].end(), 0.0,
+                                          [](double s, double x) { return s + x * x; });
+
+            norm = sqrt(norm);
+            double u = distribution(mt);
+
+            unsigned int y = mt() % k;
+
+            for (int j = 0; j < d; j++) {
+                dataset[i][j] = centers[y][j] + radii[y] * pow(u, 1/d) * dataset[i][j] / norm;
+            }
+        }
+        return move(dataset);
     }
 }
 

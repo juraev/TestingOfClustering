@@ -24,14 +24,15 @@ int main() {
         return std::sqrt(res);
     };
 
-    int k = 2, d = 2, n = 1000;
-    double b = 100;
-    double beta = 1;
-    double epsilon = 8;
+    int k = 2, d = 3, n = 1000;
+    double b = 2;
+    double beta = 0.01;
+    double epsilon = 0.7;
 
-    auto dataset = vector<clustering::Point>{{1, 0}, {2, 0}, {10, 0}, {14.000000000000001, 0}};
+//    auto dataset = vector<clustering::Point>{{1, 0}, {2, 0}, {10, 0}, {14.000000000000001, 0}};
+    auto dataset = generate_k_clusters(b, k, d, n);
 
-    SamplingAlgorithm<Cost::DIAMETER, Metric::L2, K::ANY> samplingAlgorithm{epsilon, b};
+    SamplingAlgorithm<Cost::RADIUS, Metric::L2, K::ANY> samplingAlgorithm{epsilon, b/(20 + beta)};
 
     cout << samplingAlgorithm.isClusterable(beta, d, dataset, dist_l2, k);
 

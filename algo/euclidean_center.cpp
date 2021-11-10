@@ -2,6 +2,7 @@
 // Created by gitarist on 31/10/21.
 //
 #include "euclidean_center.h"
+#include <stdexcept>
 
 double radius(const std::vector<Cgal_Point>& points, const int D){
 

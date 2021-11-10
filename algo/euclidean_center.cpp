@@ -4,7 +4,7 @@
 #include "euclidean_center.h"
 #include <stdexcept>
 
-double radius(const std::vector<Cgal_Point>& points, const int D){
+double radius(const std::vector<Cgal_Point> &points, const int D) {
 
     switch (D) {
         case 1:
@@ -23,9 +23,8 @@ double radius(const std::vector<Cgal_Point>& points, const int D){
             return radiusnD<5>(points);
 
         default:
-            throw std::runtime_error("Euclidean 1 center : Not impemented for D < 1 or D > 5.");
+            throw std::runtime_error("Euclidean 1 center : Not implemented for D < 1 or D > 5.");
     }
-    return 0.0;
 }
 
 bool euclidean_k_center(const vector<Point> &sample, int k, double b, const Dist &dist, int d) {
@@ -68,4 +67,46 @@ bool euclidean_k_center(const vector<Point> &sample, int k, double b, const Dist
 
     auto part = vector<int>(n, 0);
     return rec(0, k, part);
+}
+
+bool euclidean_k_centers(const vector<Point> &sample, int k, double b, const Dist &dist, int d) {
+    int n = sample.size();
+
+    auto check = [&](vector<int> &part) {
+        vector<Cgal_Point> partitions[k];
+
+        FT coord[d];
+
+        for (int i = 0; i < n; i++) {
+            Point point = sample[i];
+            int j = 0;
+            for (double x : point)
+                coord[j++] = FT{x};
+            partitions[part[i]].push_back(Cgal_Point{d, coord, coord + d}); // NOLINT(modernize-use-emplace)
+        }
+
+        bool result = std::all_of(partitions, partitions + k,
+                                  [&](auto &P) {
+                                      return P.empty() || radius(P, d) <= b;
+                                  });
+        return result;
+    };
+
+    int ii = 0;
+    std::function<bool(int, int, vector<int> &)> recursion = [&](int N, int K, vector<int> &part) {
+        if (N == n) {
+            return check(part);
+        }
+
+        for (int i = 0; i < K; i++) {
+            part[N] = i;
+            if (recursion(N + 1, K, part)) {
+                return true;
+            }
+        }
+        return false;
+    };
+
+    auto part = vector<int>(n, 0);
+    return recursion(0, k, part);
 }

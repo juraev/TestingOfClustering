@@ -27,86 +27,86 @@ double radius(const std::vector<Cgal_Point> &points, const int D) {
     }
 }
 
-bool euclidean_k_center(const vector<Point> &sample, int k, double b, const Dist &dist, int d) {
-    int n = static_cast<int>(sample.size());
+bool euclidean_k_diameters(const vector<Point>& sample, int k, double b, const Dist& dist, int d) {
+	int n = sample.size();
 
-    auto check = [&](vector<int> &part) {
-        vector<vector<Point>> partitions(k);
+	auto check = [&](vector<int>& part) {
+		vector<vector<Point> > partitions(k);
 
-        for (int i = 0; i < n; i++) {
-            partitions[part[i]].push_back(sample[i]);
-        }
-        for (auto P : partitions) {
-            if (P.empty()) continue;
+		for (int i = 0; i < n; i++) {
+			partitions[part[i]].push_back(sample[i]);
+		}
+		for (auto P : partitions) {
+			if (P.empty()) continue;
 
-            int c = static_cast<int>(P.size());
+			int c = P.size();
 
-            for (int i = 0; i < c; i++) {
-                for (int j = i + 1; j < c; j++) {
-                    if (dist(P[i], P[j], d) > b) return false;
-                }
-            }
-        }
-        return true;
-    };
+			for (int i = 0; i < c; i++) {
+				for (int j = i + 1; j < c; j++) {
+					if (dist(P[i], P[j], d) > b) return false;
+				}
+			}
+		}
+		return true;
+	};
 
 
-    std::function<bool(int, int, vector<int> &)> rec = [&](int N, int K, vector<int> &part) {
-        if (N == n) {
-            return check(part);
-        }
+	std::function<bool(int, int, vector<int>&)> rec = [&](int N, int K, vector<int>& part) {
+		if (N == n) {
+			return check(part);
+		}
 
-        for (int i = 0; i < K; i++) {
-            part[N] = i;
-            if (rec(N + 1, K, part)) {
-                return true;
-            }
-        }
-        return false;
-    };
+		for (int i = 0; i < K; i++) {
+			part[N] = i;
+			if (rec(N + 1, K, part)) {
+				return true;
+			}
+		}
+		return false;
+	};
 
-    auto part = vector<int>(n, 0);
-    return rec(0, k, part);
+	auto part = vector<int>(n, 0);
+	return rec(0, k, part);
 }
 
-bool euclidean_k_centers(const vector<Point> &sample, int k, double b, const Dist &dist, int d) {
-    int n = sample.size();
+bool euclidean_k_centers(const vector<Point>& sample, int k, double b, const Dist& dist, int d) {
+	int n = sample.size();
 
-    auto check = [&](vector<int> &part) {
-        vector<Cgal_Point> partitions[k];
+	auto check = [&](vector<int>& part) {
+		vector<vector<Cgal_Point> > partitions(k);
+		vector<FT> coordVec(d);
+		FT* coord = &coordVec[0];
 
-        FT coord[d];
+		for (int i = 0; i < n; i++) {
+			Point point = sample[i];
+			int j = 0;
+			for (double x : point)
+				coord[j++] = FT{ x };
+			partitions[part[i]].push_back(Cgal_Point{ d, coord, coord + d }); // NOLINT(modernize-use-emplace)
+		}
 
-        for (int i = 0; i < n; i++) {
-            Point point = sample[i];
-            int j = 0;
-            for (double x : point)
-                coord[j++] = FT{x};
-            partitions[part[i]].push_back(Cgal_Point{d, coord, coord + d}); // NOLINT(modernize-use-emplace)
-        }
+		bool result = std::all_of(partitions.begin(), partitions.begin() + k,
+			[&](auto& P) {
+			return P.empty() || radius(P, d) <= b;
+		});
+		return result;
+	};
 
-        bool result = std::all_of(partitions, partitions + k,
-                                  [&](auto &P) {
-                                      return P.empty() || radius(P, d) <= b;
-                                  });
-        return result;
-    };
+	int ii = 0;
+	std::function<bool(int, int, vector<int>&)> recursion = [&](int N, int K, vector<int>& part) {
+		if (N == n) {
+			return check(part);
+		}
 
-    int ii = 0;
-    std::function<bool(int, int, vector<int> &)> recursion = [&](int N, int K, vector<int> &part) {
-        if (N == n) {
-            return check(part);
-        }
+		for (int i = 0; i < K; i++) {
+			part[N] = i;
+			if (recursion(N + 1, K, part)) {
+				return true;
+			}
+		}
+		return false;
+	};
 
-        for (int i = 0; i < K; i++) {
-            part[N] = i;
-            if (recursion(N + 1, K, part)) {
-                return true;
-            }
-        }
-        return false;
-    };
-
-    auto part = vector<int>(n, 0);
-    return recursion(0, k, part);
+	auto part = vector<int>(n, 0);
+	return recursion(0, k, part);
 }

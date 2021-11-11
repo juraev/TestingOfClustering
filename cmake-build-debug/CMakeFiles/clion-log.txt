@@ -1,5 +1,15 @@
 /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_C_COMPILER=/usr/bin/gcc -DCMAKE_CXX_COMPILER=/usr/bin/g++ -G "CodeBlocks - Unix Makefiles" /Users/user/CLionProjects/TestingOfClustering
 -- Using header-only CGAL
+CMake Warning at algo/CMakeLists.txt:4 (find_package):
+  Found package configuration file:
+
+    /usr/local/lib/cmake/CGAL/CGALConfig.cmake
+
+  but it set CGAL_FOUND to FALSE so package "CGAL" is considered to be NOT
+  FOUND.
+
+
+-- Using header-only CGAL
 -- Targetting Unix Makefiles
 -- Using /usr/bin/g++ compiler.
 -- DARWIN_VERSION=21

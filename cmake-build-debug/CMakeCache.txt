@@ -35,6 +35,9 @@ CGAL_CTEST_DISPLAY_MEM_AND_TIME:BOOL=OFF
 //Activate the CGAL developers mode. See https://github.com/CGAL/cgal/wiki/CGAL_DEV_MODE
 CGAL_DEV_MODE:BOOL=OFF
 
+//The directory containing a CMake configuration file for CGAL.
+CGAL_DIR:PATH=/usr/local/lib/cmake/CGAL
+
 //If set, the ctest command will not skip the tests of the draw
 // functions.
 CGAL_TEST_DRAW_FUNCTIONS:BOOL=OFF

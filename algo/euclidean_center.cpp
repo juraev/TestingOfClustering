@@ -27,7 +27,7 @@ double radius(const std::vector<Cgal_Point> &points, const int D) {
     }
 }
 
-bool euclidean_k_center(const vector<Point> &sample, int k, double b, const Dist &dist, int d) {
+bool euclidean_k_diameters(const vector<Point> &sample, int k, double b, const Dist &dist, int d) {
     int n = static_cast<int>(sample.size());
 
     auto check = [&](vector<int> &part) {

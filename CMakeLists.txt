@@ -11,6 +11,8 @@ add_subdirectory(utils)
 add_subdirectory(algo)
 
 # add the executable
+set(CGAL_DIR  C:/dev/vcpkg/packages/cgal_x64-windows)
+find_package(CGAL)
 add_executable(TestingOfClustering main.cpp)
 
 # add the link
@@ -18,6 +20,6 @@ target_link_libraries(TestingOfClustering PUBLIC utils algo)
 
 ## add the binary tree to the search path for include files
 ## so that we will find TutorialConfig.h
-#target_include_directories(TestingOfClustering
+# target_include_directories(TestingOfClustering
 #                          ${PROJECT_BINARY_DIR}
 #                          ${PROJECT_SOURCE_DIR}/utils)

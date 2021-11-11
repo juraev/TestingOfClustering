@@ -51,7 +51,7 @@ namespace {
     double radiusnD<1>(const std::vector<Cgal_Point> &points) {
         int D = 1;
         std::vector<Sphere1D> S;                  // n spheres
-        int N = points.size();
+        int N = static_cast<int>(points.size());
 
         for (int i = 0; i < N; ++i) {
             S.emplace_back(points[i], FT(0));
@@ -71,7 +71,7 @@ namespace {
     double radiusnD<2>(const std::vector<Cgal_Point> &points) {
         int D = 2;
         std::vector<Sphere2D> S;                  // n spheres
-        int N = points.size();
+        int N = static_cast<int>(points.size());
 
         for (int i = 0; i < N; ++i) {
             S.emplace_back(points[i], FT(0));
@@ -91,7 +91,7 @@ namespace {
     double radiusnD<3>(const std::vector<Cgal_Point> &points) {
         int D = 1;
         std::vector<Sphere3D> S;                  // n spheres
-        int N = points.size();
+        int N = static_cast<int>(points.size());
 
         for (int i = 0; i < N; ++i) {
             S.emplace_back(points[i], FT(0));
@@ -111,7 +111,7 @@ namespace {
     double radiusnD<4>(const std::vector<Cgal_Point> &points) {
         int D = 1;
         std::vector<Sphere4D> S;                  // n spheres
-        int N = points.size();
+        int N = static_cast<int>(points.size());
 
         for (int i = 0; i < N; ++i) {
             S.emplace_back(points[i], FT(0));
@@ -131,7 +131,7 @@ namespace {
     double radiusnD<5>(const std::vector<Cgal_Point> &points) {
         int D = 1;
         std::vector<Sphere5D> S;                  // n spheres
-        int N = points.size();
+        int N = static_cast<int>(points.size());
 
         for (int i = 0; i < N; ++i) {
             S.emplace_back(points[i], FT(0));

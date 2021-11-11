@@ -40,21 +40,9 @@ vector<T> VecMul(const vector<T>& v1, const vector<T>& v2) {
 };
 
 template <typename T>
-vector<T> VecAbs(const vector<T>& v) {
-	vector<T> result;
-	transform(
-		v.begin(), v.end(),
-		back_inserter(result),
-		[](T x) -> T { return (x>0)?x:-x;});
-	return result;
-};
-
-template <typename T>
 double VecNorm(const vector<T>& v) {
 	vector<T> sq = VecMul<T>(v, v);
 	double s = double(accumulate(
 		sq.begin(), sq.end(), 0.0));
 	return sqrt(s);
 };
-
-

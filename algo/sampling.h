@@ -188,7 +188,6 @@ namespace clustering {
      */
     template<>
     bool SamplingAlgorithm<Cost::DIAMETER, Metric::L2, K::ONE>::isClusterable(double beta, int d, const vector<Point>& dataset, Dist dist, int k) {
-
         int m = static_cast < int>(2 * floor(1 / _epsilon * pow(d, 3 / 2) * log(1 / beta) * pow(2 / beta, d)));
         int n = static_cast<int>(dataset.size());
 		std::cout << "m: " << m <<  " n: " << n << std::endl;
@@ -207,7 +206,6 @@ namespace clustering {
         for (int i : indices){
             for (int j : indices) {
                 if (dist(dataset[i], dataset[j], d) > _b){
-					std::cout << i << " " << j << std::endl;
                     return false;
                 }
             }

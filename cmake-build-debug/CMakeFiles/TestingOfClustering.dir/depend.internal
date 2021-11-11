@@ -6,6 +6,8 @@ CMakeFiles/TestingOfClustering.dir/main.cpp.o
  /Users/user/CLionProjects/TestingOfClustering/algo/sampling.h
  /Users/user/CLionProjects/TestingOfClustering/main.cpp
  /Users/user/CLionProjects/TestingOfClustering/utils/data.h
+ /Users/user/CLionProjects/TestingOfClustering/utils/math_utils.h
+ /Users/user/CLionProjects/TestingOfClustering/utils/metrics.h
  /usr/local/include/boost/any.hpp
  /usr/local/include/boost/array.hpp
  /usr/local/include/boost/assert.hpp

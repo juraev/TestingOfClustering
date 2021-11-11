@@ -37,10 +37,14 @@ filesystem
 -
 random
 -
+stdexcept
+-
 algo/sampling.h
 /Users/user/CLionProjects/TestingOfClustering/algo/sampling.h
 utils/data.h
 /Users/user/CLionProjects/TestingOfClustering/utils/data.h
+utils/metrics.h
+/Users/user/CLionProjects/TestingOfClustering/utils/metrics.h
 
 /Users/user/CLionProjects/TestingOfClustering/utils/data.h
 vector
@@ -54,6 +58,26 @@ sstream
 stdlib.h
 -
 filesystem
+-
+
+/Users/user/CLionProjects/TestingOfClustering/utils/math_utils.h
+vector
+-
+assert.h
+-
+math.h
+-
+numeric
+-
+algorithm
+-
+functional
+-
+
+/Users/user/CLionProjects/TestingOfClustering/utils/metrics.h
+math_utils.h
+/Users/user/CLionProjects/TestingOfClustering/utils/math_utils.h
+limits
 -
 
 /usr/local/include/boost/any.hpp

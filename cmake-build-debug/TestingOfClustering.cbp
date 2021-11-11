@@ -5,7 +5,7 @@
 		<Option title="TestingOfClustering"/>
 		<Option makefile_is_custom="1"/>
 		<Option compiler="gcc"/>
-		<Option virtualFolders="CMake Files\;CMake Files\utils\;CMake Files\algo\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\usr\;CMake Files\..\..\..\..\usr\local\;CMake Files\..\..\..\..\usr\local\opt\;CMake Files\..\..\..\..\usr\local\opt\cgal\;CMake Files\..\..\..\..\usr\local\opt\cgal\lib\;CMake Files\..\..\..\..\usr\local\opt\cgal\lib\cmake\;CMake Files\..\..\..\..\usr\local\opt\cgal\lib\cmake\CGAL\;CMake Files\..\..\..\..\usr\local\lib\;CMake Files\..\..\..\..\usr\local\lib\cmake\;CMake Files\..\..\..\..\usr\local\lib\cmake\Boost-1.76.0\;CMake Files\..\..\..\..\usr\local\lib\cmake\boost_headers-1.76.0\;"/>
+		<Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\usr\;CMake Files\..\..\..\..\usr\local\;CMake Files\..\..\..\..\usr\local\opt\;CMake Files\..\..\..\..\usr\local\opt\cgal\;CMake Files\..\..\..\..\usr\local\opt\cgal\lib\;CMake Files\..\..\..\..\usr\local\opt\cgal\lib\cmake\;CMake Files\..\..\..\..\usr\local\opt\cgal\lib\cmake\CGAL\;CMake Files\..\..\..\..\usr\local\lib\;CMake Files\..\..\..\..\usr\local\lib\cmake\;CMake Files\..\..\..\..\usr\local\lib\cmake\Boost-1.76.0\;CMake Files\..\..\..\..\usr\local\lib\cmake\boost_headers-1.76.0\;CMake Files\..\..\..\..\usr\local\lib\cmake\CGAL\;CMake Files\utils\;CMake Files\algo\;"/>
 		<Build>
 			<Target title="all">
 				<Option working_dir="/Users/user/CLionProjects/TestingOfClustering/cmake-build-debug"/>
@@ -206,12 +206,6 @@
 		<Unit filename="/Users/user/CLionProjects/TestingOfClustering/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
-		<Unit filename="/Users/user/CLionProjects/TestingOfClustering/utils/CMakeLists.txt">
-			<Option virtualFolder="CMake Files\utils\"/>
-		</Unit>
-		<Unit filename="/Users/user/CLionProjects/TestingOfClustering/algo/CMakeLists.txt">
-			<Option virtualFolder="CMake Files\algo\"/>
-		</Unit>
 		<Unit filename="/Users/user/CLionProjects/TestingOfClustering/../../../../usr/local/opt/cgal/lib/cmake/CGAL/CGALConfig.cmake">
 			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\opt\cgal\lib\cmake\CGAL\"/>
 		</Unit>
@@ -283,6 +277,69 @@
 		</Unit>
 		<Unit filename="/Users/user/CLionProjects/TestingOfClustering/../../../../usr/local/lib/cmake/boost_headers-1.76.0/boost_headers-config.cmake">
 			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\boost_headers-1.76.0\"/>
+		</Unit>
+		<Unit filename="/Users/user/CLionProjects/TestingOfClustering/../../../../usr/local/lib/cmake/CGAL/CGALConfig-installation-dirs.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\CGAL\"/>
+		</Unit>
+		<Unit filename="/Users/user/CLionProjects/TestingOfClustering/../../../../usr/local/lib/cmake/CGAL/CGALConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\CGAL\"/>
+		</Unit>
+		<Unit filename="/Users/user/CLionProjects/TestingOfClustering/../../../../usr/local/lib/cmake/CGAL/CGAL_Common.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\CGAL\"/>
+		</Unit>
+		<Unit filename="/Users/user/CLionProjects/TestingOfClustering/../../../../usr/local/lib/cmake/CGAL/CGAL_CreateSingleSourceCGALProgram.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\CGAL\"/>
+		</Unit>
+		<Unit filename="/Users/user/CLionProjects/TestingOfClustering/../../../../usr/local/lib/cmake/CGAL/CGAL_Macros.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\CGAL\"/>
+		</Unit>
+		<Unit filename="/Users/user/CLionProjects/TestingOfClustering/../../../../usr/local/lib/cmake/CGAL/CGAL_TweakFindBoost.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\CGAL\"/>
+		</Unit>
+		<Unit filename="/Users/user/CLionProjects/TestingOfClustering/../../../../usr/local/lib/cmake/CGAL/CGAL_VersionUtils.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\CGAL\"/>
+		</Unit>
+		<Unit filename="/Users/user/CLionProjects/TestingOfClustering/../../../../usr/local/lib/cmake/CGAL/CGAL_add_test.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\CGAL\"/>
+		</Unit>
+		<Unit filename="/Users/user/CLionProjects/TestingOfClustering/../../../../usr/local/lib/cmake/CGAL/CGAL_target_use_Boost_IOStreams.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\CGAL\"/>
+		</Unit>
+		<Unit filename="/Users/user/CLionProjects/TestingOfClustering/../../../../usr/local/lib/cmake/CGAL/CGAL_target_use_Boost_Serialization.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\CGAL\"/>
+		</Unit>
+		<Unit filename="/Users/user/CLionProjects/TestingOfClustering/../../../../usr/local/lib/cmake/CGAL/CGAL_target_use_Eigen.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\CGAL\"/>
+		</Unit>
+		<Unit filename="/Users/user/CLionProjects/TestingOfClustering/../../../../usr/local/lib/cmake/CGAL/CGAL_target_use_GLPK.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\CGAL\"/>
+		</Unit>
+		<Unit filename="/Users/user/CLionProjects/TestingOfClustering/../../../../usr/local/lib/cmake/CGAL/CGAL_target_use_LASLIB.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\CGAL\"/>
+		</Unit>
+		<Unit filename="/Users/user/CLionProjects/TestingOfClustering/../../../../usr/local/lib/cmake/CGAL/CGAL_target_use_OpenCV.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\CGAL\"/>
+		</Unit>
+		<Unit filename="/Users/user/CLionProjects/TestingOfClustering/../../../../usr/local/lib/cmake/CGAL/CGAL_target_use_OpenGR.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\CGAL\"/>
+		</Unit>
+		<Unit filename="/Users/user/CLionProjects/TestingOfClustering/../../../../usr/local/lib/cmake/CGAL/CGAL_target_use_SCIP.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\CGAL\"/>
+		</Unit>
+		<Unit filename="/Users/user/CLionProjects/TestingOfClustering/../../../../usr/local/lib/cmake/CGAL/CGAL_target_use_TBB.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\CGAL\"/>
+		</Unit>
+		<Unit filename="/Users/user/CLionProjects/TestingOfClustering/../../../../usr/local/lib/cmake/CGAL/CGAL_target_use_TensorFlow.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\CGAL\"/>
+		</Unit>
+		<Unit filename="/Users/user/CLionProjects/TestingOfClustering/../../../../usr/local/lib/cmake/CGAL/CGAL_target_use_pointmatcher.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\CGAL\"/>
+		</Unit>
+		<Unit filename="/Users/user/CLionProjects/TestingOfClustering/utils/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\utils\"/>
+		</Unit>
+		<Unit filename="/Users/user/CLionProjects/TestingOfClustering/algo/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\algo\"/>
 		</Unit>
 	</Project>
 </CodeBlocks_project_file>

@@ -1,4 +1,5 @@
 #include "metrics.h"
+#include <string>
 using namespace std;
 
 double PointDistL2(const vector<double>& p1, const vector<double>& p2) {

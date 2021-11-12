@@ -11,7 +11,7 @@ add_subdirectory(utils)
 add_subdirectory(algo)
 
 # add the executable
-set(CGAL_DIR  C:/dev/vcpkg/packages/cgal_x64-windows)
+set(CGAL_DIR /usr/local/opt/cgal/lib/cmake/CGAL)
 find_package(CGAL)
 add_executable(TestingOfClustering main.cpp)
 

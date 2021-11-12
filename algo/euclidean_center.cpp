@@ -67,6 +67,7 @@ bool euclidean_k_diameters(const vector<Point>& sample, int k, double b, const D
 
 	auto part = vector<int>(n, 0);
 	return rec(0, k, part);
+
 }
 
 bool euclidean_k_centers(const vector<Point>& sample, int k, double b, const Dist& dist, int d) {

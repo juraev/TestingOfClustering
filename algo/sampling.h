@@ -35,6 +35,7 @@ namespace clustering {
 
     class BaseAlgorithm {
     protected:
+		int m_history;
         std::mt19937 myrand;
         double _epsilon{};
         double _b{};
@@ -52,6 +53,7 @@ namespace clustering {
     public:
         explicit SamplingAlgorithm(double epsilon, double b/*dist*/);
         bool isClusterable(double beta, int d, const vector<Point>&, Dist, int);
+		inline int getM() { return m_history;  };
     };
 
     /**
@@ -64,6 +66,7 @@ namespace clustering {
     public:
         explicit SamplingAlgorithm(double epsilon, double b);
         bool isClusterable(double beta, int d, const vector<Point>&, Dist, int);
+		inline int getM() { return m_history; };
     };
 
     // definitions
@@ -80,6 +83,7 @@ namespace clustering {
     SamplingAlgorithm<cost, metric, k>::SamplingAlgorithm(double epsilon, double b) {
         _epsilon = epsilon;
         _b = b;
+		m_history = 0;
         std::random_device rd;
         myrand = std::mt19937(rd());
     }
@@ -96,6 +100,7 @@ namespace clustering {
     SamplingAlgorithm<Cost::RADIUS, Metric::L2, k> ::SamplingAlgorithm(double epsilon, double b) {
         _epsilon = epsilon;
         _b = b;
+		m_history = 0;
         std::random_device rd;
         myrand = std::mt19937(rd());
     }
@@ -110,12 +115,17 @@ namespace clustering {
         int m = floor(d*k / _epsilon * log(d*k/_epsilon));
         int n = dataset.size();
 
-        std::cout << n << " -- " << m << std::endl;
+		if (m <= 0) {
+			m_history = 0;
+			std::cout << "invalid m: " << m << std::endl;
+			return false;
+		}
 
-        if(m > 300) {
-            std::cout << "too big m = " << m << ": interrupting... \n";
-            return false;
-        }
+		m_history = m;
+		int max_M = 15;
+		if (m > max_M) {
+			std::cout << m << " larger than max M: " << max_M << std::endl;
+		}
 
         vector<int> indices(m, 0);
 
@@ -153,14 +163,19 @@ namespace clustering {
         int m = static_cast<int>(2 * floor(log(1/beta) / (_epsilon * beta)));
         int n = static_cast<int>(dataset.size());
 
+		if (m < 0) {
+			m_history = 0;
+			std::cout << "invalid m: " << m << std::endl;
+			return false;
+		}
+		m_history = m;
+
         std::mt19937& mt = myrand;
         std::uniform_int_distribution<int> distribution{0, n - 1};
 
         auto gen = [&mt, &distribution](){
             return distribution(mt);
         };
-
-        std::cout << n << " " << m << std::endl;
 
         vector<int> indices(m, 0);
         std::generate(indices.begin(), indices.end(), gen);
@@ -190,7 +205,7 @@ namespace clustering {
     bool SamplingAlgorithm<Cost::DIAMETER, Metric::L2, K::ONE>::isClusterable(double beta, int d, const vector<Point>& dataset, Dist dist, int k) {
         int m = static_cast < int>(2 * floor(1 / _epsilon * pow(d, 3 / 2) * log(1 / beta) * pow(2 / beta, d)));
         int n = static_cast<int>(dataset.size());
-		std::cout << "m: " << m <<  " n: " << n << std::endl;
+		m_history = m;
 
         vector<int> indices(m, 0);
 
@@ -223,14 +238,18 @@ namespace clustering {
         int m = static_cast<int>(2 * floor((k*k) * log(k) / _epsilon * d * pow((2/beta), 2*d)));
         int n = static_cast<int>(dataset.size());
 
-		// std::cout << k * k * log(k) << " " <<  d / _epsilon << " " << pow(2 / beta, 2 * d) << " " << std::endl;
-		// std::cout << " k: " << k << " d: " << d << " beta: " << beta << " e:  " << _epsilon << std::endl;
-        std::cout << n << " " << m << std::endl;
+		if (m <= 0) {
+			m_history = 0;
+			std::cout << "invalid m: " << m << std::endl;
+			return false;
+		}
 
-        if(m > 300) {
-            std::cout << "too big m = " << m << ": interrupting... \n";
-            return false;
-        }
+		int max_M = 15;
+		m_history = m;
+		if (m > max_M) {
+			std::cout << m << " larger than max M: " << max_M << std::endl;
+			m = max_M;
+		}
 
         vector<int> indices(m, 0);
 
@@ -245,8 +264,9 @@ namespace clustering {
 
         vector<Point> samples(m);
 
-        for(int i = 0; i < m; i ++)
-            samples[i] = dataset[indices[i]];
+		for (int i = 0; i < m; i++) {
+			samples[i] = dataset[indices[i]];
+		}
 
         return euclidean_k_diameters(samples, k, _b, dist, d);
     }

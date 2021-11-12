@@ -1,0 +1,680 @@
+###### experiment on N_1000_eps_0.2_beta_0.05-0.25 ######
+===epsilon factor: 0.2 beta: 0.01
+samples: 4604 N: 1000
+result: 0 duration: 198.8
+===epsilon factor: 0.2 beta: 0.125
+samples: 166 N: 1000
+result: 0 duration: 8.05
+===epsilon factor: 0.2 beta: 0.25
+samples: 54 N: 1000
+result: 0 duration: 2.95
+===epsilon factor: 0.2 beta: 0.5
+samples: 12 N: 1000
+result: 0.3 duration: 1
+===epsilon factor: 0.2 beta: 0.7
+samples: 4 N: 1000
+result: 0.9 duration: 0.45
+===epsilon factor: 0.2 beta: 0.84
+samples: 2 N: 1000
+result: 1 duration: 0.15
+===epsilon factor: 0.2 beta: 0.95
+samples: 0 N: 1000
+result: 1 duration: 0
+===epsilon factor: 0.4 beta: 0.01
+samples: 2302 N: 1000
+result: 0 duration: 98.8
+===epsilon factor: 0.4 beta: 0.125
+samples: 82 N: 1000
+result: 0 duration: 3.7
+===epsilon factor: 0.4 beta: 0.25
+samples: 26 N: 1000
+result: 0.05 duration: 1.95
+===epsilon factor: 0.4 beta: 0.5
+samples: 6 N: 1000
+result: 0.95 duration: 0.45
+===epsilon factor: 0.4 beta: 0.7
+samples: 2 N: 1000
+result: 1 duration: 0.1
+===epsilon factor: 0.4 beta: 0.84
+samples: 0 N: 1000
+result: 1 duration: 0.05
+===epsilon factor: 0.4 beta: 0.95
+samples: 0 N: 1000
+result: 1 duration: 0.05
+===epsilon factor: 0.6 beta: 0.01
+samples: 1534 N: 1000
+result: 0 duration: 71.1
+===epsilon factor: 0.6 beta: 0.125
+samples: 54 N: 1000
+result: 0 duration: 2.55
+===epsilon factor: 0.6 beta: 0.25
+samples: 18 N: 1000
+result: 0.15 duration: 1.3
+===epsilon factor: 0.6 beta: 0.5
+samples: 4 N: 1000
+result: 0.9 duration: 0.25
+===epsilon factor: 0.6 beta: 0.7
+samples: 0 N: 1000
+result: 1 duration: 0.05
+===epsilon factor: 0.6 beta: 0.84
+samples: 0 N: 1000
+result: 1 duration: 0
+===epsilon factor: 0.6 beta: 0.95
+samples: 0 N: 1000
+result: 1 duration: 0
+===epsilon factor: 0.8 beta: 0.01
+samples: 1150 N: 1000
+result: 0 duration: 53.55
+===epsilon factor: 0.8 beta: 0.125
+samples: 40 N: 1000
+result: 0 duration: 1.85
+===epsilon factor: 0.8 beta: 0.25
+samples: 12 N: 1000
+result: 0.15 duration: 0.95
+===epsilon factor: 0.8 beta: 0.5
+samples: 2 N: 1000
+result: 0.95 duration: 0.05
+===epsilon factor: 0.8 beta: 0.7
+samples: 0 N: 1000
+result: 1 duration: 0
+===epsilon factor: 0.8 beta: 0.84
+samples: 0 N: 1000
+result: 1 duration: 0.1
+===epsilon factor: 0.8 beta: 0.95
+samples: 0 N: 1000
+result: 1 duration: 0
+###### experiment on N_1000_eps_0.4_beta_0.05-0.25 ######
+===epsilon factor: 0.2 beta: 0.01
+samples: 4604 N: 1000
+result: 0 duration: 210
+===epsilon factor: 0.2 beta: 0.125
+samples: 166 N: 1000
+result: 0 duration: 7.45
+===epsilon factor: 0.2 beta: 0.25
+samples: 54 N: 1000
+result: 0 duration: 2.65
+===epsilon factor: 0.2 beta: 0.5
+samples: 12 N: 1000
+result: 0.05 duration: 0.8
+===epsilon factor: 0.2 beta: 0.7
+samples: 4 N: 1000
+result: 0.6 duration: 0.25
+===epsilon factor: 0.2 beta: 0.84
+samples: 2 N: 1000
+result: 0.85 duration: 0.1
+===epsilon factor: 0.2 beta: 0.95
+samples: 0 N: 1000
+result: 1 duration: 0
+===epsilon factor: 0.4 beta: 0.01
+samples: 2302 N: 1000
+result: 0 duration: 107
+===epsilon factor: 0.4 beta: 0.125
+samples: 82 N: 1000
+result: 0 duration: 4.35
+===epsilon factor: 0.4 beta: 0.25
+samples: 26 N: 1000
+result: 0 duration: 1.75
+===epsilon factor: 0.4 beta: 0.5
+samples: 6 N: 1000
+result: 0.55 duration: 0.45
+===epsilon factor: 0.4 beta: 0.7
+samples: 2 N: 1000
+result: 0.9 duration: 0.25
+===epsilon factor: 0.4 beta: 0.84
+samples: 0 N: 1000
+result: 1 duration: 0.1
+===epsilon factor: 0.4 beta: 0.95
+samples: 0 N: 1000
+result: 1 duration: 0.05
+===epsilon factor: 0.6 beta: 0.01
+samples: 1534 N: 1000
+result: 0 duration: 70.65
+===epsilon factor: 0.6 beta: 0.125
+samples: 54 N: 1000
+result: 0 duration: 3.4
+===epsilon factor: 0.6 beta: 0.25
+samples: 18 N: 1000
+result: 0.05 duration: 1.7
+===epsilon factor: 0.6 beta: 0.5
+samples: 4 N: 1000
+result: 0.7 duration: 0.15
+===epsilon factor: 0.6 beta: 0.7
+samples: 0 N: 1000
+result: 1 duration: 0
+===epsilon factor: 0.6 beta: 0.84
+samples: 0 N: 1000
+result: 1 duration: 0.05
+===epsilon factor: 0.6 beta: 0.95
+samples: 0 N: 1000
+result: 1 duration: 0
+===epsilon factor: 0.8 beta: 0.01
+samples: 1150 N: 1000
+result: 0 duration: 54.4
+===epsilon factor: 0.8 beta: 0.125
+samples: 40 N: 1000
+result: 0 duration: 2.15
+===epsilon factor: 0.8 beta: 0.25
+samples: 12 N: 1000
+result: 0.05 duration: 0.9
+===epsilon factor: 0.8 beta: 0.5
+samples: 2 N: 1000
+result: 0.9 duration: 0.15
+===epsilon factor: 0.8 beta: 0.7
+samples: 0 N: 1000
+result: 1 duration: 0.05
+===epsilon factor: 0.8 beta: 0.84
+samples: 0 N: 1000
+result: 1 duration: 0
+===epsilon factor: 0.8 beta: 0.95
+samples: 0 N: 1000
+result: 1 duration: 0
+###### experiment on N_100000_eps_0.2_beta_0.05-0.25 ######
+===epsilon factor: 0.2 beta: 0.01
+samples: 4604 N: 100000
+result: 0 duration: 221.85
+===epsilon factor: 0.2 beta: 0.125
+samples: 166 N: 100000
+result: 0 duration: 8.15
+===epsilon factor: 0.2 beta: 0.25
+samples: 54 N: 100000
+result: 0 duration: 2.85
+===epsilon factor: 0.2 beta: 0.5
+samples: 12 N: 100000
+result: 0.45 duration: 0.9
+===epsilon factor: 0.2 beta: 0.7
+samples: 4 N: 100000
+result: 0.85 duration: 0.35
+===epsilon factor: 0.2 beta: 0.84
+samples: 2 N: 100000
+result: 1 duration: 0.15
+===epsilon factor: 0.2 beta: 0.95
+samples: 0 N: 100000
+result: 1 duration: 0
+===epsilon factor: 0.4 beta: 0.01
+samples: 2302 N: 100000
+result: 0 duration: 112.75
+===epsilon factor: 0.4 beta: 0.125
+samples: 82 N: 100000
+result: 0 duration: 4.65
+===epsilon factor: 0.4 beta: 0.25
+samples: 26 N: 100000
+result: 0.1 duration: 1.5
+===epsilon factor: 0.4 beta: 0.5
+samples: 6 N: 100000
+result: 0.6 duration: 0.6
+===epsilon factor: 0.4 beta: 0.7
+samples: 2 N: 100000
+result: 1 duration: 0.1
+===epsilon factor: 0.4 beta: 0.84
+samples: 0 N: 100000
+result: 1 duration: 0.05
+===epsilon factor: 0.4 beta: 0.95
+samples: 0 N: 100000
+result: 1 duration: 0.1
+===epsilon factor: 0.6 beta: 0.01
+samples: 1534 N: 100000
+result: 0 duration: 71.35
+===epsilon factor: 0.6 beta: 0.125
+samples: 54 N: 100000
+result: 0 duration: 3.35
+===epsilon factor: 0.6 beta: 0.25
+samples: 18 N: 100000
+result: 0.1 duration: 1.35
+===epsilon factor: 0.6 beta: 0.5
+samples: 4 N: 100000
+result: 0.8 duration: 0.5
+===epsilon factor: 0.6 beta: 0.7
+samples: 0 N: 100000
+result: 1 duration: 0
+===epsilon factor: 0.6 beta: 0.84
+samples: 0 N: 100000
+result: 1 duration: 0.05
+===epsilon factor: 0.6 beta: 0.95
+samples: 0 N: 100000
+result: 1 duration: 0
+===epsilon factor: 0.8 beta: 0.01
+samples: 1150 N: 100000
+result: 0 duration: 58.45
+===epsilon factor: 0.8 beta: 0.125
+samples: 40 N: 100000
+result: 0 duration: 2.1
+===epsilon factor: 0.8 beta: 0.25
+samples: 12 N: 100000
+result: 0.25 duration: 1.25
+===epsilon factor: 0.8 beta: 0.5
+samples: 2 N: 100000
+result: 0.95 duration: 0.15
+===epsilon factor: 0.8 beta: 0.7
+samples: 0 N: 100000
+result: 1 duration: 0.05
+===epsilon factor: 0.8 beta: 0.84
+samples: 0 N: 100000
+result: 1 duration: 0
+===epsilon factor: 0.8 beta: 0.95
+samples: 0 N: 100000
+result: 1 duration: 0
+###### experiment on N_100000_eps_0.4_beta_0.05-0.25 ######
+===epsilon factor: 0.2 beta: 0.01
+samples: 4604 N: 100000
+result: 0 duration: 318.45
+===epsilon factor: 0.2 beta: 0.125
+samples: 166 N: 100000
+result: 0 duration: 11.9
+===epsilon factor: 0.2 beta: 0.25
+samples: 54 N: 100000
+result: 0 duration: 3.95
+===epsilon factor: 0.2 beta: 0.5
+samples: 12 N: 100000
+result: 0 duration: 1.5
+===epsilon factor: 0.2 beta: 0.7
+samples: 4 N: 100000
+result: 0.7 duration: 0.55
+===epsilon factor: 0.2 beta: 0.84
+samples: 2 N: 100000
+result: 0.95 duration: 0.3
+===epsilon factor: 0.2 beta: 0.95
+samples: 0 N: 100000
+result: 1 duration: 0.05
+===epsilon factor: 0.4 beta: 0.01
+samples: 2302 N: 100000
+result: 0 duration: 174.9
+===epsilon factor: 0.4 beta: 0.125
+samples: 82 N: 100000
+result: 0 duration: 6.2
+===epsilon factor: 0.4 beta: 0.25
+samples: 26 N: 100000
+result: 0 duration: 2.35
+===epsilon factor: 0.4 beta: 0.5
+samples: 6 N: 100000
+result: 0.45 duration: 1.1
+===epsilon factor: 0.4 beta: 0.7
+samples: 2 N: 100000
+result: 0.95 duration: 0.35
+===epsilon factor: 0.4 beta: 0.84
+samples: 0 N: 100000
+result: 1 duration: 0
+===epsilon factor: 0.4 beta: 0.95
+samples: 0 N: 100000
+result: 1 duration: 0.05
+===epsilon factor: 0.6 beta: 0.01
+samples: 1534 N: 100000
+result: 0 duration: 108.4
+===epsilon factor: 0.6 beta: 0.125
+samples: 54 N: 100000
+result: 0 duration: 5.25
+===epsilon factor: 0.6 beta: 0.25
+samples: 18 N: 100000
+result: 0 duration: 2.2
+===epsilon factor: 0.6 beta: 0.5
+samples: 4 N: 100000
+result: 0.6 duration: 0.6
+===epsilon factor: 0.6 beta: 0.7
+samples: 0 N: 100000
+result: 1 duration: 0.05
+===epsilon factor: 0.6 beta: 0.84
+samples: 0 N: 100000
+result: 1 duration: 0
+===epsilon factor: 0.6 beta: 0.95
+samples: 0 N: 100000
+result: 1 duration: 0
+===epsilon factor: 0.8 beta: 0.01
+samples: 1150 N: 100000
+result: 0 duration: 80.15
+===epsilon factor: 0.8 beta: 0.125
+samples: 40 N: 100000
+result: 0 duration: 3.15
+===epsilon factor: 0.8 beta: 0.25
+samples: 12 N: 100000
+result: 0 duration: 0.9
+===epsilon factor: 0.8 beta: 0.5
+samples: 2 N: 100000
+result: 0.9 duration: 0.15
+===epsilon factor: 0.8 beta: 0.7
+samples: 0 N: 100000
+result: 1 duration: 0
+===epsilon factor: 0.8 beta: 0.84
+samples: 0 N: 100000
+result: 1 duration: 0.1
+===epsilon factor: 0.8 beta: 0.95
+samples: 0 N: 100000
+result: 1 duration: 0
+###### experiment on N_1000_eps_0.2_beta_0.25-0.5 ######
+===epsilon factor: 0.2 beta: 0.01
+samples: 4604 N: 1000
+result: 0 duration: 212.9
+===epsilon factor: 0.2 beta: 0.125
+samples: 166 N: 1000
+result: 0 duration: 10.35
+===epsilon factor: 0.2 beta: 0.25
+samples: 54 N: 1000
+result: 0 duration: 2.9
+===epsilon factor: 0.2 beta: 0.5
+samples: 12 N: 1000
+result: 0.1 duration: 1
+===epsilon factor: 0.2 beta: 0.7
+samples: 4 N: 1000
+result: 0.5 duration: 0.5
+===epsilon factor: 0.2 beta: 0.84
+samples: 2 N: 1000
+result: 0.9 duration: 0.15
+===epsilon factor: 0.2 beta: 0.95
+samples: 0 N: 1000
+result: 1 duration: 0
+===epsilon factor: 0.4 beta: 0.01
+samples: 2302 N: 1000
+result: 0 duration: 106.85
+===epsilon factor: 0.4 beta: 0.125
+samples: 82 N: 1000
+result: 0 duration: 4.45
+===epsilon factor: 0.4 beta: 0.25
+samples: 26 N: 1000
+result: 0 duration: 1.3
+===epsilon factor: 0.4 beta: 0.5
+samples: 6 N: 1000
+result: 0.55 duration: 0.55
+===epsilon factor: 0.4 beta: 0.7
+samples: 2 N: 1000
+result: 0.8 duration: 0.15
+===epsilon factor: 0.4 beta: 0.84
+samples: 0 N: 1000
+result: 1 duration: 0
+===epsilon factor: 0.4 beta: 0.95
+samples: 0 N: 1000
+result: 1 duration: 0.05
+===epsilon factor: 0.6 beta: 0.01
+samples: 1534 N: 1000
+result: 0 duration: 69.95
+===epsilon factor: 0.6 beta: 0.125
+samples: 54 N: 1000
+result: 0 duration: 2.7
+===epsilon factor: 0.6 beta: 0.25
+samples: 18 N: 1000
+result: 0.05 duration: 1.15
+===epsilon factor: 0.6 beta: 0.5
+samples: 4 N: 1000
+result: 0.95 duration: 0.45
+===epsilon factor: 0.6 beta: 0.7
+samples: 0 N: 1000
+result: 1 duration: 0
+===epsilon factor: 0.6 beta: 0.84
+samples: 0 N: 1000
+result: 1 duration: 0.05
+===epsilon factor: 0.6 beta: 0.95
+samples: 0 N: 1000
+result: 1 duration: 0.05
+===epsilon factor: 0.8 beta: 0.01
+samples: 1150 N: 1000
+result: 0 duration: 56.45
+===epsilon factor: 0.8 beta: 0.125
+samples: 40 N: 1000
+result: 0 duration: 1.9
+===epsilon factor: 0.8 beta: 0.25
+samples: 12 N: 1000
+result: 0.1 duration: 0.75
+===epsilon factor: 0.8 beta: 0.5
+samples: 2 N: 1000
+result: 1 duration: 0.05
+===epsilon factor: 0.8 beta: 0.7
+samples: 0 N: 1000
+result: 1 duration: 0.05
+===epsilon factor: 0.8 beta: 0.84
+samples: 0 N: 1000
+result: 1 duration: 0
+===epsilon factor: 0.8 beta: 0.95
+samples: 0 N: 1000
+result: 1 duration: 0.05
+###### experiment on N_1000_eps_0.4_beta_0.25-0.5 ######
+===epsilon factor: 0.2 beta: 0.01
+samples: 4604 N: 1000
+result: 0 duration: 227.5
+===epsilon factor: 0.2 beta: 0.125
+samples: 166 N: 1000
+result: 0 duration: 9.95
+===epsilon factor: 0.2 beta: 0.25
+samples: 54 N: 1000
+result: 0 duration: 3.75
+===epsilon factor: 0.2 beta: 0.5
+samples: 12 N: 1000
+result: 0.1 duration: 1
+===epsilon factor: 0.2 beta: 0.7
+samples: 4 N: 1000
+result: 0.45 duration: 0.5
+===epsilon factor: 0.2 beta: 0.84
+samples: 2 N: 1000
+result: 0.95 duration: 0.3
+===epsilon factor: 0.2 beta: 0.95
+samples: 0 N: 1000
+result: 1 duration: 0
+===epsilon factor: 0.4 beta: 0.01
+samples: 2302 N: 1000
+result: 0 duration: 112.5
+===epsilon factor: 0.4 beta: 0.125
+samples: 82 N: 1000
+result: 0 duration: 3.9
+===epsilon factor: 0.4 beta: 0.25
+samples: 26 N: 1000
+result: 0 duration: 1.5
+===epsilon factor: 0.4 beta: 0.5
+samples: 6 N: 1000
+result: 0.1 duration: 0.5
+===epsilon factor: 0.4 beta: 0.7
+samples: 2 N: 1000
+result: 0.8 duration: 0.05
+===epsilon factor: 0.4 beta: 0.84
+samples: 0 N: 1000
+result: 1 duration: 0
+===epsilon factor: 0.4 beta: 0.95
+samples: 0 N: 1000
+result: 1 duration: 0
+===epsilon factor: 0.6 beta: 0.01
+samples: 1534 N: 1000
+result: 0 duration: 75.75
+===epsilon factor: 0.6 beta: 0.125
+samples: 54 N: 1000
+result: 0 duration: 3.7
+===epsilon factor: 0.6 beta: 0.25
+samples: 18 N: 1000
+result: 0 duration: 1.35
+===epsilon factor: 0.6 beta: 0.5
+samples: 4 N: 1000
+result: 0.5 duration: 0.4
+===epsilon factor: 0.6 beta: 0.7
+samples: 0 N: 1000
+result: 1 duration: 0
+===epsilon factor: 0.6 beta: 0.84
+samples: 0 N: 1000
+result: 1 duration: 0
+===epsilon factor: 0.6 beta: 0.95
+samples: 0 N: 1000
+result: 1 duration: 0
+===epsilon factor: 0.8 beta: 0.01
+samples: 1150 N: 1000
+result: 0 duration: 57.5
+===epsilon factor: 0.8 beta: 0.125
+samples: 40 N: 1000
+result: 0 duration: 2.35
+===epsilon factor: 0.8 beta: 0.25
+samples: 12 N: 1000
+result: 0 duration: 1.05
+===epsilon factor: 0.8 beta: 0.5
+samples: 2 N: 1000
+result: 0.95 duration: 0.4
+===epsilon factor: 0.8 beta: 0.7
+samples: 0 N: 1000
+result: 1 duration: 0
+===epsilon factor: 0.8 beta: 0.84
+samples: 0 N: 1000
+result: 1 duration: 0.05
+===epsilon factor: 0.8 beta: 0.95
+samples: 0 N: 1000
+result: 1 duration: 0.1
+###### experiment on N_100000_eps_0.2_beta_0.25-0.5 ######
+===epsilon factor: 0.2 beta: 0.01
+samples: 4604 N: 100000
+result: 0 duration: 221.85
+===epsilon factor: 0.2 beta: 0.125
+samples: 166 N: 100000
+result: 0 duration: 8.5
+===epsilon factor: 0.2 beta: 0.25
+samples: 54 N: 100000
+result: 0 duration: 3
+===epsilon factor: 0.2 beta: 0.5
+samples: 12 N: 100000
+result: 0 duration: 0.85
+===epsilon factor: 0.2 beta: 0.7
+samples: 4 N: 100000
+result: 0.85 duration: 0.5
+===epsilon factor: 0.2 beta: 0.84
+samples: 2 N: 100000
+result: 0.95 duration: 0.25
+===epsilon factor: 0.2 beta: 0.95
+samples: 0 N: 100000
+result: 1 duration: 0
+===epsilon factor: 0.4 beta: 0.01
+samples: 2302 N: 100000
+result: 0 duration: 155.45
+===epsilon factor: 0.4 beta: 0.125
+samples: 82 N: 100000
+result: 0 duration: 5.3
+===epsilon factor: 0.4 beta: 0.25
+samples: 26 N: 100000
+result: 0 duration: 1.7
+===epsilon factor: 0.4 beta: 0.5
+samples: 6 N: 100000
+result: 0.65 duration: 0.75
+===epsilon factor: 0.4 beta: 0.7
+samples: 2 N: 100000
+result: 0.95 duration: 0.35
+===epsilon factor: 0.4 beta: 0.84
+samples: 0 N: 100000
+result: 1 duration: 0.05
+===epsilon factor: 0.4 beta: 0.95
+samples: 0 N: 100000
+result: 1 duration: 0.1
+===epsilon factor: 0.6 beta: 0.01
+samples: 1534 N: 100000
+result: 0 duration: 80.7
+===epsilon factor: 0.6 beta: 0.125
+samples: 54 N: 100000
+result: 0 duration: 2.95
+===epsilon factor: 0.6 beta: 0.25
+samples: 18 N: 100000
+result: 0 duration: 1.55
+===epsilon factor: 0.6 beta: 0.5
+samples: 4 N: 100000
+result: 0.65 duration: 0.4
+===epsilon factor: 0.6 beta: 0.7
+samples: 0 N: 100000
+result: 1 duration: 0
+===epsilon factor: 0.6 beta: 0.84
+samples: 0 N: 100000
+result: 1 duration: 0.05
+===epsilon factor: 0.6 beta: 0.95
+samples: 0 N: 100000
+result: 1 duration: 0.1
+===epsilon factor: 0.8 beta: 0.01
+samples: 1150 N: 100000
+result: 0 duration: 56.8
+===epsilon factor: 0.8 beta: 0.125
+samples: 40 N: 100000
+result: 0 duration: 2.4
+===epsilon factor: 0.8 beta: 0.25
+samples: 12 N: 100000
+result: 0.1 duration: 1.05
+===epsilon factor: 0.8 beta: 0.5
+samples: 2 N: 100000
+result: 0.8 duration: 0
+===epsilon factor: 0.8 beta: 0.7
+samples: 0 N: 100000
+result: 1 duration: 0
+===epsilon factor: 0.8 beta: 0.84
+samples: 0 N: 100000
+result: 1 duration: 0
+===epsilon factor: 0.8 beta: 0.95
+samples: 0 N: 100000
+result: 1 duration: 0
+###### experiment on N_100000_eps_0.4_beta_0.25-0.5 ######
+===epsilon factor: 0.2 beta: 0.01
+samples: 4604 N: 100000
+result: 0 duration: 254.8
+===epsilon factor: 0.2 beta: 0.125
+samples: 166 N: 100000
+result: 0 duration: 9
+===epsilon factor: 0.2 beta: 0.25
+samples: 54 N: 100000
+result: 0 duration: 3.6
+===epsilon factor: 0.2 beta: 0.5
+samples: 12 N: 100000
+result: 0.05 duration: 0.8
+===epsilon factor: 0.2 beta: 0.7
+samples: 4 N: 100000
+result: 0.4 duration: 0.55
+===epsilon factor: 0.2 beta: 0.84
+samples: 2 N: 100000
+result: 0.75 duration: 0.15
+===epsilon factor: 0.2 beta: 0.95
+samples: 0 N: 100000
+result: 1 duration: 0.05
+===epsilon factor: 0.4 beta: 0.01
+samples: 2302 N: 100000
+result: 0 duration: 115.25
+===epsilon factor: 0.4 beta: 0.125
+samples: 82 N: 100000
+result: 0 duration: 4.2
+===epsilon factor: 0.4 beta: 0.25
+samples: 26 N: 100000
+result: 0 duration: 1.95
+===epsilon factor: 0.4 beta: 0.5
+samples: 6 N: 100000
+result: 0.2 duration: 0.6
+===epsilon factor: 0.4 beta: 0.7
+samples: 2 N: 100000
+result: 0.95 duration: 0.2
+===epsilon factor: 0.4 beta: 0.84
+samples: 0 N: 100000
+result: 1 duration: 0.1
+===epsilon factor: 0.4 beta: 0.95
+samples: 0 N: 100000
+result: 1 duration: 0
+===epsilon factor: 0.6 beta: 0.01
+samples: 1534 N: 100000
+result: 0 duration: 73.7
+===epsilon factor: 0.6 beta: 0.125
+samples: 54 N: 100000
+result: 0 duration: 3.1
+===epsilon factor: 0.6 beta: 0.25
+samples: 18 N: 100000
+result: 0 duration: 1.5
+===epsilon factor: 0.6 beta: 0.5
+samples: 4 N: 100000
+result: 0.7 duration: 0.4
+===epsilon factor: 0.6 beta: 0.7
+samples: 0 N: 100000
+result: 1 duration: 0
+===epsilon factor: 0.6 beta: 0.84
+samples: 0 N: 100000
+result: 1 duration: 0.05
+===epsilon factor: 0.6 beta: 0.95
+samples: 0 N: 100000
+result: 1 duration: 0
+===epsilon factor: 0.8 beta: 0.01
+samples: 1150 N: 100000
+result: 0 duration: 61.4
+===epsilon factor: 0.8 beta: 0.125
+samples: 40 N: 100000
+result: 0 duration: 2.4
+===epsilon factor: 0.8 beta: 0.25
+samples: 12 N: 100000
+result: 0.05 duration: 0.95
+===epsilon factor: 0.8 beta: 0.5
+samples: 2 N: 100000
+result: 0.85 duration: 0.05
+===epsilon factor: 0.8 beta: 0.7
+samples: 0 N: 100000
+result: 1 duration: 0.05
+===epsilon factor: 0.8 beta: 0.84
+samples: 0 N: 100000
+result: 1 duration: 0.05
+===epsilon factor: 0.8 beta: 0.95
+samples: 0 N: 100000
+result: 1 duration: 0

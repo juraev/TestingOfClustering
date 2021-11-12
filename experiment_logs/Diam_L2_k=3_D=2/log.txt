@@ -1,0 +1,455 @@
+###### experiment on N_1000_eps_0.2_beta_0.05-0.25 ######
+invalid m: -2147483648
+invalid m: -2147483648
+invalid m: -2147483648
+invalid m: -2147483648
+invalid m: -2147483648
+invalid m: -2147483648
+invalid m: -2147483648
+invalid m: -2147483648
+invalid m: -2147483648
+invalid m: -2147483648
+invalid m: -2147483648
+invalid m: -2147483648
+invalid m: -2147483648
+invalid m: -2147483648
+invalid m: -2147483648
+invalid m: -2147483648
+invalid m: -2147483648
+invalid m: -2147483648
+invalid m: -2147483648
+invalid m: -2147483648
+===epsilon factor: 0.2 beta: 0.01
+samples: 0 N: 1000
+result: 0 duration: 0.15
+12959756 larger than max M: 15
+12959756 larger than max M: 15
+12959756 larger than max M: 15
+12959756 larger than max M: 15
+12959756 larger than max M: 15
+12959756 larger than max M: 15
+12959756 larger than max M: 15
+12959756 larger than max M: 15
+12959756 larger than max M: 15
+12959756 larger than max M: 15
+12959756 larger than max M: 15
+12959756 larger than max M: 15
+12959756 larger than max M: 15
+12959756 larger than max M: 15
+12959756 larger than max M: 15
+12959756 larger than max M: 15
+12959756 larger than max M: 15
+12959756 larger than max M: 15
+12959756 larger than max M: 15
+12959756 larger than max M: 15
+===epsilon factor: 0.2 beta: 0.125
+samples: 15 N: 1000
+result: 0.45 duration: 42192.7
+809984 larger than max M: 15
+809984 larger than max M: 15
+809984 larger than max M: 15
+809984 larger than max M: 15
+809984 larger than max M: 15
+809984 larger than max M: 15
+809984 larger than max M: 15
+809984 larger than max M: 15
+809984 larger than max M: 15
+809984 larger than max M: 15
+809984 larger than max M: 15
+809984 larger than max M: 15
+809984 larger than max M: 15
+809984 larger than max M: 15
+809984 larger than max M: 15
+809984 larger than max M: 15
+809984 larger than max M: 15
+809984 larger than max M: 15
+809984 larger than max M: 15
+809984 larger than max M: 15
+===epsilon factor: 0.2 beta: 0.25
+samples: 15 N: 1000
+result: 0.65 duration: 28728.5
+50624 larger than max M: 15
+50624 larger than max M: 15
+50624 larger than max M: 15
+50624 larger than max M: 15
+50624 larger than max M: 15
+50624 larger than max M: 15
+50624 larger than max M: 15
+50624 larger than max M: 15
+50624 larger than max M: 15
+50624 larger than max M: 15
+50624 larger than max M: 15
+50624 larger than max M: 15
+50624 larger than max M: 15
+50624 larger than max M: 15
+50624 larger than max M: 15
+50624 larger than max M: 15
+50624 larger than max M: 15
+50624 larger than max M: 15
+50624 larger than max M: 15
+50624 larger than max M: 15
+===epsilon factor: 0.2 beta: 0.5
+samples: 15 N: 1000
+result: 0.45 duration: 98591.9
+13176 larger than max M: 15
+13176 larger than max M: 15
+13176 larger than max M: 15
+13176 larger than max M: 15
+13176 larger than max M: 15
+13176 larger than max M: 15
+13176 larger than max M: 15
+13176 larger than max M: 15
+13176 larger than max M: 15
+13176 larger than max M: 15
+13176 larger than max M: 15
+13176 larger than max M: 15
+13176 larger than max M: 15
+13176 larger than max M: 15
+13176 larger than max M: 15
+13176 larger than max M: 15
+13176 larger than max M: 15
+13176 larger than max M: 15
+13176 larger than max M: 15
+13176 larger than max M: 15
+===epsilon factor: 0.2 beta: 0.7
+samples: 15 N: 1000
+result: 0.6 duration: 35645.1
+6354 larger than max M: 15
+6354 larger than max M: 15
+6354 larger than max M: 15
+6354 larger than max M: 15
+6354 larger than max M: 15
+6354 larger than max M: 15
+6354 larger than max M: 15
+6354 larger than max M: 15
+6354 larger than max M: 15
+6354 larger than max M: 15
+6354 larger than max M: 15
+6354 larger than max M: 15
+6354 larger than max M: 15
+6354 larger than max M: 15
+6354 larger than max M: 15
+6354 larger than max M: 15
+6354 larger than max M: 15
+6354 larger than max M: 15
+6354 larger than max M: 15
+6354 larger than max M: 15
+===epsilon factor: 0.2 beta: 0.84
+samples: 15 N: 1000
+result: 0.55 duration: 38941
+3884 larger than max M: 15
+3884 larger than max M: 15
+3884 larger than max M: 15
+3884 larger than max M: 15
+3884 larger than max M: 15
+3884 larger than max M: 15
+3884 larger than max M: 15
+3884 larger than max M: 15
+3884 larger than max M: 15
+3884 larger than max M: 15
+3884 larger than max M: 15
+3884 larger than max M: 15
+3884 larger than max M: 15
+3884 larger than max M: 15
+3884 larger than max M: 15
+3884 larger than max M: 15
+3884 larger than max M: 15
+3884 larger than max M: 15
+3884 larger than max M: 15
+3884 larger than max M: 15
+===epsilon factor: 0.2 beta: 0.95
+samples: 15 N: 1000
+result: 0.75 duration: 24687.7
+invalid m: -2147483648
+invalid m: -2147483648
+invalid m: -2147483648
+invalid m: -2147483648
+invalid m: -2147483648
+invalid m: -2147483648
+invalid m: -2147483648
+invalid m: -2147483648
+invalid m: -2147483648
+invalid m: -2147483648
+invalid m: -2147483648
+invalid m: -2147483648
+invalid m: -2147483648
+invalid m: -2147483648
+invalid m: -2147483648
+invalid m: -2147483648
+invalid m: -2147483648
+invalid m: -2147483648
+invalid m: -2147483648
+invalid m: -2147483648
+===epsilon factor: 0.4 beta: 0.01
+samples: 0 N: 1000
+result: 0 duration: 0
+6479878 larger than max M: 15
+6479878 larger than max M: 15
+6479878 larger than max M: 15
+6479878 larger than max M: 15
+6479878 larger than max M: 15
+6479878 larger than max M: 15
+6479878 larger than max M: 15
+6479878 larger than max M: 15
+6479878 larger than max M: 15
+6479878 larger than max M: 15
+6479878 larger than max M: 15
+6479878 larger than max M: 15
+6479878 larger than max M: 15
+6479878 larger than max M: 15
+6479878 larger than max M: 15
+6479878 larger than max M: 15
+6479878 larger than max M: 15
+6479878 larger than max M: 15
+6479878 larger than max M: 15
+6479878 larger than max M: 15
+===epsilon factor: 0.4 beta: 0.125
+samples: 15 N: 1000
+result: 0.6 duration: 36225
+404992 larger than max M: 15
+404992 larger than max M: 15
+404992 larger than max M: 15
+404992 larger than max M: 15
+404992 larger than max M: 15
+404992 larger than max M: 15
+404992 larger than max M: 15
+404992 larger than max M: 15
+404992 larger than max M: 15
+404992 larger than max M: 15
+404992 larger than max M: 15
+404992 larger than max M: 15
+404992 larger than max M: 15
+404992 larger than max M: 15
+404992 larger than max M: 15
+404992 larger than max M: 15
+404992 larger than max M: 15
+404992 larger than max M: 15
+404992 larger than max M: 15
+404992 larger than max M: 15
+===epsilon factor: 0.4 beta: 0.25
+samples: 15 N: 1000
+result: 0.65 duration: 36025.7
+25312 larger than max M: 15
+25312 larger than max M: 15
+25312 larger than max M: 15
+25312 larger than max M: 15
+25312 larger than max M: 15
+25312 larger than max M: 15
+25312 larger than max M: 15
+25312 larger than max M: 15
+25312 larger than max M: 15
+25312 larger than max M: 15
+25312 larger than max M: 15
+25312 larger than max M: 15
+25312 larger than max M: 15
+25312 larger than max M: 15
+25312 larger than max M: 15
+25312 larger than max M: 15
+25312 larger than max M: 15
+25312 larger than max M: 15
+25312 larger than max M: 15
+25312 larger than max M: 15
+===epsilon factor: 0.4 beta: 0.5
+samples: 15 N: 1000
+result: 0.55 duration: 39425.2
+6588 larger than max M: 15
+6588 larger than max M: 15
+6588 larger than max M: 15
+6588 larger than max M: 15
+6588 larger than max M: 15
+6588 larger than max M: 15
+6588 larger than max M: 15
+6588 larger than max M: 15
+6588 larger than max M: 15
+6588 larger than max M: 15
+6588 larger than max M: 15
+6588 larger than max M: 15
+6588 larger than max M: 15
+6588 larger than max M: 15
+6588 larger than max M: 15
+6588 larger than max M: 15
+6588 larger than max M: 15
+6588 larger than max M: 15
+6588 larger than max M: 15
+6588 larger than max M: 15
+===epsilon factor: 0.4 beta: 0.7
+samples: 15 N: 1000
+result: 0.5 duration: 44152.7
+3176 larger than max M: 15
+3176 larger than max M: 15
+3176 larger than max M: 15
+3176 larger than max M: 15
+3176 larger than max M: 15
+3176 larger than max M: 15
+3176 larger than max M: 15
+3176 larger than max M: 15
+3176 larger than max M: 15
+3176 larger than max M: 15
+3176 larger than max M: 15
+3176 larger than max M: 15
+3176 larger than max M: 15
+3176 larger than max M: 15
+3176 larger than max M: 15
+3176 larger than max M: 15
+3176 larger than max M: 15
+3176 larger than max M: 15
+3176 larger than max M: 15
+3176 larger than max M: 15
+===epsilon factor: 0.4 beta: 0.84
+samples: 15 N: 1000
+result: 0.65 duration: 33605.1
+1942 larger than max M: 15
+1942 larger than max M: 15
+1942 larger than max M: 15
+1942 larger than max M: 15
+1942 larger than max M: 15
+1942 larger than max M: 15
+1942 larger than max M: 15
+1942 larger than max M: 15
+1942 larger than max M: 15
+1942 larger than max M: 15
+1942 larger than max M: 15
+1942 larger than max M: 15
+1942 larger than max M: 15
+1942 larger than max M: 15
+1942 larger than max M: 15
+1942 larger than max M: 15
+1942 larger than max M: 15
+1942 larger than max M: 15
+1942 larger than max M: 15
+1942 larger than max M: 15
+===epsilon factor: 0.4 beta: 0.95
+samples: 15 N: 1000
+result: 0.75 duration: 26638.5
+invalid m: -2147483648
+invalid m: -2147483648
+invalid m: -2147483648
+invalid m: -2147483648
+invalid m: -2147483648
+invalid m: -2147483648
+invalid m: -2147483648
+invalid m: -2147483648
+invalid m: -2147483648
+invalid m: -2147483648
+invalid m: -2147483648
+invalid m: -2147483648
+invalid m: -2147483648
+invalid m: -2147483648
+invalid m: -2147483648
+invalid m: -2147483648
+invalid m: -2147483648
+invalid m: -2147483648
+invalid m: -2147483648
+invalid m: -2147483648
+===epsilon factor: 0.6 beta: 0.01
+samples: 0 N: 1000
+result: 0 duration: 0
+4319918 larger than max M: 15
+4319918 larger than max M: 15
+4319918 larger than max M: 15
+4319918 larger than max M: 15
+4319918 larger than max M: 15
+4319918 larger than max M: 15
+4319918 larger than max M: 15
+4319918 larger than max M: 15
+4319918 larger than max M: 15
+4319918 larger than max M: 15
+4319918 larger than max M: 15
+4319918 larger than max M: 15
+4319918 larger than max M: 15
+4319918 larger than max M: 15
+4319918 larger than max M: 15
+4319918 larger than max M: 15
+4319918 larger than max M: 15
+4319918 larger than max M: 15
+4319918 larger than max M: 15
+4319918 larger than max M: 15
+===epsilon factor: 0.6 beta: 0.125
+samples: 15 N: 1000
+result: 0.5 duration: 41947.1
+269994 larger than max M: 15
+269994 larger than max M: 15
+269994 larger than max M: 15
+269994 larger than max M: 15
+269994 larger than max M: 15
+269994 larger than max M: 15
+269994 larger than max M: 15
+269994 larger than max M: 15
+269994 larger than max M: 15
+269994 larger than max M: 15
+269994 larger than max M: 15
+269994 larger than max M: 15
+269994 larger than max M: 15
+269994 larger than max M: 15
+269994 larger than max M: 15
+269994 larger than max M: 15
+269994 larger than max M: 15
+269994 larger than max M: 15
+269994 larger than max M: 15
+269994 larger than max M: 15
+===epsilon factor: 0.6 beta: 0.25
+samples: 15 N: 1000
+result: 0.45 duration: 47577.7
+16874 larger than max M: 15
+16874 larger than max M: 15
+16874 larger than max M: 15
+16874 larger than max M: 15
+16874 larger than max M: 15
+16874 larger than max M: 15
+16874 larger than max M: 15
+16874 larger than max M: 15
+16874 larger than max M: 15
+16874 larger than max M: 15
+16874 larger than max M: 15
+16874 larger than max M: 15
+16874 larger than max M: 15
+16874 larger than max M: 15
+16874 larger than max M: 15
+16874 larger than max M: 15
+16874 larger than max M: 15
+16874 larger than max M: 15
+16874 larger than max M: 15
+16874 larger than max M: 15
+===epsilon factor: 0.6 beta: 0.5
+samples: 15 N: 1000
+result: 0.85 duration: 18713.8
+4392 larger than max M: 15
+4392 larger than max M: 15
+4392 larger than max M: 15
+4392 larger than max M: 15
+4392 larger than max M: 15
+4392 larger than max M: 15
+4392 larger than max M: 15
+4392 larger than max M: 15
+4392 larger than max M: 15
+4392 larger than max M: 15
+4392 larger than max M: 15
+4392 larger than max M: 15
+4392 larger than max M: 15
+4392 larger than max M: 15
+4392 larger than max M: 15
+4392 larger than max M: 15
+4392 larger than max M: 15
+4392 larger than max M: 15
+4392 larger than max M: 15
+4392 larger than max M: 15
+===epsilon factor: 0.6 beta: 0.7
+samples: 15 N: 1000
+result: 0.4 duration: 148417
+2118 larger than max M: 15
+2118 larger than max M: 15
+2118 larger than max M: 15
+2118 larger than max M: 15
+2118 larger than max M: 15
+2118 larger than max M: 15
+2118 larger than max M: 15
+2118 larger than max M: 15
+2118 larger than max M: 15
+2118 larger than max M: 15
+2118 larger than max M: 15
+2118 larger than max M: 15
+2118 larger than max M: 15
+2118 larger than max M: 15
+2118 larger than max M: 15
+2118 larger than max M: 15
+2118 larger than max M: 15

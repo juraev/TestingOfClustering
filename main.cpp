@@ -3,6 +3,7 @@
 #include <filesystem>
 #include <random>
 #include <stdexcept>
+#include <ctime>
 #include "algo/sampling.h"
 #include "utils/data.h"
 #include "utils/metrics.h"
@@ -14,8 +15,13 @@ using std::to_string;
 namespace fs = std::filesystem;
 
 int main() {
-	string experimentName = "Diam_L2_k=1_D=2";
-	vector<string> configNames{ "eps_0.2_beta_0.05-0.25", "eps_0.4_beta_0.05-0.25" };
+	string experimentName = "Radius_L2_k=1_D=2";
+	vector<string> configNames{ 
+		"N_1000_eps_0.2_beta_0.05-0.25", "N_1000_eps_0.4_beta_0.05-0.25",
+		"N_100000_eps_0.2_beta_0.05-0.25", "N_100000_eps_0.4_beta_0.05-0.25",
+		"N_1000_eps_0.2_beta_0.25-0.5", "N_1000_eps_0.4_beta_0.25-0.5",
+		"N_100000_eps_0.2_beta_0.25-0.5", "N_100000_eps_0.4_beta_0.25-0.5"
+	};
 	vector<double> epsilonCandidates{ 0.2, 0.4, 0.6, 0.8 };
 	vector<double> betaCandidates{ 0.01, 0.125, 0.25, 0.5, 0.7, 0.84, 0.95 };
 	int nTrials = 20;
@@ -24,15 +30,24 @@ int main() {
 	fs::path inputFolderPath = folderPath / fs::path("data") / fs::path(experimentName);
 	fs::path outputFolderPath = folderPath / fs::path("experiment_logs") / fs::path(experimentName);
 	fs::path outputPath = outputFolderPath / fs::path("log.txt");
-	fs::create_directory(outputFolderPath);
+	if (!fs::is_directory(outputFolderPath)) {
+		fs::create_directory(outputFolderPath);
+	}
+	
 	std::ofstream out(outputPath);
 	std::streambuf* coutbuf = std::cout.rdbuf();
 	std::cout.rdbuf(out.rdbuf());
 
 	for (string configName : configNames) {
+		std::cout << "###### experiment on " << configName << " ######" << std::endl;
 		for (double epsilonCandidate : epsilonCandidates) {
 			for (double betaCandidate : betaCandidates) {
-				double results = 0;
+				double results = 0.0;
+				double duration = 0.0;
+				int n_samples = 0;
+				int n_points = 0;
+				std::clock_t timerStart;
+
 				for (int trialIdx = 0; trialIdx < nTrials; trialIdx++) {
 					// load the data
 					fs::path dsPath = inputFolderPath / fs::path(configName) / fs::path(to_string(trialIdx)) / fs::path("inputs");
@@ -44,25 +59,53 @@ int main() {
 					string distType = configs.metric;
 					Dist distFunc = getDistFunction(distType);
 
+					n_points = configs.N;
 					bool isDiameter = configs.cost.compare("diameter") == 0;
 					bool isL2 = configs.metric.compare("euclidean") == 0;
 					bool isSingle = configs.k == 1;
+					bool result = true;
 					if (isDiameter && isL2 && isSingle) {
 						SamplingAlgorithm<Cost::DIAMETER, Metric::L2, K::ONE> samplingAlgorithm{ 
 							epsilonCandidate, configs.b};
-						bool result = samplingAlgorithm.isClusterable(
+						timerStart = std::clock();
+						result = samplingAlgorithm.isClusterable(
 							betaCandidate, configs.D, data.points, distFunc, configs.k);
-						results += result;
-					}
-					else {
+						n_samples = samplingAlgorithm.getM();
+					} else if (isDiameter && isL2 && (!isSingle)) {
+						SamplingAlgorithm<Cost::DIAMETER, Metric::L2, K::ANY> samplingAlgorithm{
+							epsilonCandidate, configs.b };
+						timerStart = std::clock();
+						result = samplingAlgorithm.isClusterable(
+							betaCandidate, configs.D, data.points, distFunc, configs.k);
+						n_samples = samplingAlgorithm.getM();
+					} else if ((!isDiameter) && isL2 && isSingle) {
+						SamplingAlgorithm<Cost::RADIUS, Metric::L2, K::ONE> samplingAlgorithm{
+							epsilonCandidate, configs.b };
+						timerStart = std::clock();
+						result = samplingAlgorithm.isClusterable(
+							betaCandidate, configs.D, data.points, distFunc, configs.k);
+						n_samples = samplingAlgorithm.getM();
+					} else if ((!isDiameter) && isL2 && (!isSingle)) {
+						SamplingAlgorithm<Cost::RADIUS, Metric::L2, K::ANY> samplingAlgorithm{
+							epsilonCandidate, configs.b };
+						timerStart = std::clock();
+						result = samplingAlgorithm.isClusterable(
+							betaCandidate, configs.D, data.points, distFunc, configs.k);
+						n_samples = samplingAlgorithm.getM();
+					} else {
 						throw std::runtime_error("unknown algorithm type");
 					}
+
+					duration += std::clock() - timerStart;
+					results += result;
 				}
 
-				double avaerageResult = results / double(nTrials);
-				std::cout << "epsilon factor: " << epsilonCandidate 
-					<< " beta: " << betaCandidate 
-					<< " result: " << results << std::endl;
+				std::cout << "===epsilon factor: " << epsilonCandidate
+					<< " beta: " << betaCandidate << std::endl;
+				std::cout << "samples: " << n_samples 
+					<< " N: " << n_points << std::endl;
+				std::cout << "result: " << results / nTrials
+					<< " duration: " << duration / nTrials << std::endl;
 			}
 		}
 	}
@@ -88,6 +131,7 @@ int main() {
 
     cout << samplingAlgorithm.isClusterable(beta, d, dataset, dist_l2, k);
 	*/
+
 
 	std::cout.rdbuf(coutbuf);
 	std::cout << "end" << std::endl;

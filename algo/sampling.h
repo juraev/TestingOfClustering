@@ -125,6 +125,7 @@ namespace clustering {
 		int max_M = 15;
 		if (m > max_M) {
 			std::cout << m << " larger than max M: " << max_M << std::endl;
+			m = max_M;
 		}
 
         vector<int> indices(m, 0);

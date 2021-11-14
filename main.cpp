@@ -15,15 +15,13 @@ using std::to_string;
 namespace fs = std::filesystem;
 
 int main() {
-	string experimentName = "Radius_L2_k=1_D=2";
+	string experimentName = "Radius_L2_k=2_D=2_ver2";
 	vector<string> configNames{ 
-		"N_1000_eps_0.2_beta_0.05-0.25", "N_1000_eps_0.4_beta_0.05-0.25",
-		"N_100000_eps_0.2_beta_0.05-0.25", "N_100000_eps_0.4_beta_0.05-0.25",
-		"N_1000_eps_0.2_beta_0.25-0.5", "N_1000_eps_0.4_beta_0.25-0.5",
-		"N_100000_eps_0.2_beta_0.25-0.5", "N_100000_eps_0.4_beta_0.25-0.5"
-	};
-	vector<double> epsilonCandidates{ 0.2, 0.4, 0.6, 0.8 };
-	vector<double> betaCandidates{ 0.01, 0.125, 0.25, 0.5, 0.7, 0.84, 0.95 };
+		"N_10000_eps_0.1_beta_0.15-0.35", "N_10000_eps_0.1_beta_0.45-0.65",
+		"N_10000_eps_0.1_beta_0.75-0.95", "N_10000_eps_0.3_beta_0.15-0.35", 
+		"N_10000_eps_0.3_beta_0.45-0.65", "N_10000_eps_0.3_beta_0.75-0.95",
+		"N_10000_eps_0.5_beta_0.15-0.35", "N_10000_eps_0.5_beta_0.45-0.65",
+		"N_10000_eps_0.5_beta_0.75-0.95"};
 	int nTrials = 20;
 
     fs::path folderPath = fs::path(__FILE__).parent_path();
@@ -40,13 +38,13 @@ int main() {
 
 	for (string configName : configNames) {
 		std::cout << "###### experiment on " << configName << " ######" << std::endl;
-		for (double epsilonCandidate : epsilonCandidates) {
-			for (double betaCandidate : betaCandidates) {
 				double results = 0.0;
 				double duration = 0.0;
 				int n_samples = 0;
 				int n_points = 0;
 				std::clock_t timerStart;
+
+				double epsilonCandidate, betaCandidate;
 
 				for (int trialIdx = 0; trialIdx < nTrials; trialIdx++) {
 					// load the data
@@ -54,6 +52,8 @@ int main() {
 					ExperimentData data = loadExperimentData(dsPath);
 					
 					DataConfigs configs = data.configs;
+					epsilonCandidate = configs.epsilon - 0.05;
+					betaCandidate = configs.beta - 0.05;
 
 					// define dist function
 					string distType = configs.metric;
@@ -106,8 +106,6 @@ int main() {
 					<< " N: " << n_points << std::endl;
 				std::cout << "result: " << results / nTrials
 					<< " duration: " << duration / nTrials << std::endl;
-			}
-		}
 	}
 
 	/*
